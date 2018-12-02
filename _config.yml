@@ -2,8 +2,8 @@
 title: Steve' Blog
 SEOTitle: 饶子昊的博客 | SteveRao Blog
 header-img: img/home-bg.jpg
-email: steve.rzh@gmail.com
-description: "悲观主义者| 饶子昊，Web & ，Software Engineer，Java| 这里是 @Steve饶子昊 的个人博客，与你一起发现更大的世界。"
+email: zihaorao@126.com
+description: "饶子昊，Web & ，Software Engineer，Java| 这里是 @Steve饶子昊 的个人博客，与你一起发现更大的世界。"
 keyword: "Steve, @Steve饶子昊,@ZihaoRao 饶子昊的博客, SteveRao Blog, 饶子昊, 博客, 个人网站, 互联网, Java, Spring, 后端, Java程序员"
 url: "https://steverao.github.io "              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
@@ -59,7 +59,7 @@ kramdown:
 
 
 # Disqus settings
-#disqus_username: hux
+#disqus_username: steve
 
 # Netease settings
 netease_comment: false
