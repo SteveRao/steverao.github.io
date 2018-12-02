@@ -23,21 +23,17 @@ tags: Spark，SparkSql, 数据可视化
 #### **SparkSql依赖配置**
 
 ------
+- 在使用`SparkSql`技术前，需要在maven项目的`pom.xml`文件中添加如下依赖：
 
-- 在使用SparkSql技术前，需要在maven项目的pom.xml文件中添加如下依赖：
+  ```jade
+  <dependency>
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-sql_2.11</artifactId>
+      <version>2.1.0</version>
+  </dependency> 
+  ```
 
-
-```jade
-<dependency>
-    <groupId>org.apache.spark</groupId>
-    <artifactId>spark-sql_2.11</artifactId>
-    <version>2.1.0</version>
-</dependency>
-```
-
-
-
-
+  
 
 #### **初始化SparkSql**
 
@@ -46,8 +42,6 @@ tags: Spark，SparkSql, 数据可视化
 - `SparkSession`类作为`SparkSql`程序的入口类(`SparkSession`是对`Spark`早期版本中的`SqlContext`和`HiveContext`的组合，继承了它们所具有的功能并进行了一些扩展)，描述了程序的相关基本信息。编写一个`SparkSql`程序首先要创建一个`SparkSession`对象。
 
 - `SparkSql`初始化代码：
-
-
 ```jade
 SparkSession spark = SparkSession.builder()
 .appName("test")
@@ -70,8 +64,6 @@ SparkSession spark = SparkSession.builder()
  
 
 - **结构描述**：其结构就像传统关系型数据库中的表，以列的形式构成，包含列名和列数据以及列结构信息等（详情见下图，其是一个`DataFrame`打印出的结构）但与此同行，它在数据读取等操作上进行了很多的优化，例如，可以按列读取字段。相比于传统关系数据库中的表在数据处理上的性能有很大提升。
-
-
 ```jade
 //DataFrame打印结果
 +---+------+-----+
@@ -95,7 +87,7 @@ SparkSession spark = SparkSession.builder()
 
 - **RDD和Schema构造：**其中的`RDD`（*Resilient Distributed Datasets*）分布式弹性数据集指的是`Spark`低版本中所提供的数据处理抽象，相比于`DataFrame`而言，其缺少列结构信息。所以通过添加`Schema`列结构信息就可以由`SparkSession`类的`createDataFrame()`方法构造出对应的`DataFrame`（**特此说明**，在`Java`版本中`Spark`默认使用`Dataset<Row>`指代`DataFrame`）
 
-​       [***相关案例***](http://spark.apachecn.org/docs/cn/2.2.0/sql-programming-guide.html#rdd%E7%9A%84%E4%BA%92%E6%93%8D%E4%BD%9C%E6%80%A7)
+   [***相关案例***](http://spark.apachecn.org/docs/cn/2.2.0/sql-programming-guide.html#rdd%E7%9A%84%E4%BA%92%E6%93%8D%E4%BD%9C%E6%80%A7)
 
 
 
@@ -133,21 +125,23 @@ SparkSession spark = SparkSession.builder()
 
    ***UDTF***:主要用来编写完成对表的某列进行拆分等生成表的操作。通过继承`GenericUDTF`基类并实现其中的特定方法实现需要的逻辑功能。 
 
+- **UDF示例**
+
+   ```jade
+   //通过SparkSession类对象调用udf()方法创建isNull（）函数
+   spark.udf().register("isNull",    //函数名，和下行函数逻辑代码
+   (String field, String defaultValue) -> field==null? defaultValue : field,
+   DataTypes.StringType);
+   
+   //调用代码
+   Dataset<Row> result = spark.sql("select a,isNull(b,'null') as b,c from table1");
+   ```
+
+   ***[其他示例](http://spark.apachecn.org/docs/cn/2.2.0/sql-programming-guide.html#aggregations)***
 
 
-***UDF示例***
 
-```jade
-//通过SparkSession类对象调用udf()方法创建isNull（）函数
-spark.udf().register("isNull",    //函数名，和下行函数逻辑代码
-(String field, String defaultValue) -> field==null? defaultValue : field,
-DataTypes.StringType);
 
-//调用代码
-Dataset<Row> result = spark.sql("select a,isNull(b,'null') as b,c from table1");
-```
-
-***[其他示例](http://spark.apachecn.org/docs/cn/2.2.0/sql-programming-guide.html#aggregations)***
 
 
 
@@ -158,8 +152,6 @@ Dataset<Row> result = spark.sql("select a,isNull(b,'null') as b,c from table1");
 ------
 
 - **读取文件数据**
-
-
 ```jade
 //调用SparkSession对象的read()方法读取json文件构造DataFrame
 Dataset<Row> in =spark.read().json("**/user.json");
@@ -172,9 +164,7 @@ in.show();
 | 18|   175| mike|
 | 19|   165|james|
 +---+------+-----+
-
 ```
-
 ```jade
 //读取csv文件
 Dataset<Row> in = spark.read().format("csv").csv("**/user.csv");
@@ -191,8 +181,6 @@ in.show();
 
 
 - **数据库数据**
-
-
 ```jade
 SparkConf conf = new SparkConf(true);
 SparkContext sc = new SparkContext("local", "Test", conf);
