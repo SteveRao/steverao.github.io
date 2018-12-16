@@ -4,7 +4,7 @@ title:      "多线程环境中的单例模式"
 subtitle:   "单例模式，线程安全"
 date:       2018-12-12
 author:     "ZihaoRao"
-header-img: "img/post-bg-sparksql.jpg"
+header-img: "img/in-post/bg/singleton.jpg"
 
 tags: 设计模式，单例模式，多线程
 ---
@@ -142,7 +142,7 @@ tags: 设计模式，单例模式，多线程
        /*获取连接方法*/
        private Session getConnection(CassandraConnectInfo connectInfo) throws DataSourceException {
            /*每一次获取连接之前都先根据连接信息看容器中是否有缓存，有则取，无则新建并缓存*/
-           Cluster cluster = Optional.ofNullable(CACHE.get(connectInfo)).orElseGet(() -> instanceSession(connectInfo));
+            Cluster cluster = CACHE.computeIfAbsent(connectInfo, d -> instanceSession(connectInfo));
            return cluster.connect();
        }
        /*其他代码省略*/
