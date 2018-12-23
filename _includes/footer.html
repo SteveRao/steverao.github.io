@@ -1,4 +1,4 @@
-<!-- Footer -->
+﻿<!-- Footer -->
 <footer>
     <div class="container">
         <div class="row">
@@ -72,12 +72,10 @@
                 <p class="copyright text-muted">
                     Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}
                     <br>
-                    Theme by <a href="http://steverao.github.io">Steve</a> |
-                    <iframe
-                        style="margin-left: 2px; margin-bottom:-5px;"
-                        frameborder="0" scrolling="0" width="91px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=SteveRao&repo=steverao.github.io&type=star&count=true" >
-                    </iframe>
+                    Theme by <a href="https://jekyllcn.com">Jekyll</a> |
+                   <span id="busuanzi_container_site_uv">
+                     访问次数:<span id="busuanzi_value_site_uv"></span>
+                  </span>
                 </p>
             </div>
         </div>
@@ -93,6 +91,8 @@
 <!-- Custom Theme JavaScript -->
 <script src="{{ "/js/hux-blog.min.js " | prepend: site.baseurl }}"></script>
 
+<!-- busuanzi JavaScript -->
+ <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 <!-- async load function -->
 <script>

@@ -103,9 +103,7 @@ page-mathjax: false
 # Friends
 friends: [
     {
-    #     title: "Su",
-    #     href: "http://su.gallery/"
-    # },{
+    
         title: "Spring Framework Documentation",
         href: "https://docs.spring.io/spring/docs/current/spring-framework-reference/"
     },{
