@@ -1,9 +1,3 @@
-# HuxBlog Boilerplate
+# SteveRao's Blog
 
-##### This is the boilerplate of [Hux Blog](https://github.com/Huxpro/huxpro.github.io), all documents is over there!
-
-#### [View Boilerplate &rarr;](http://huangxuan.me/huxblog-boilerplate/)
-
-#### [View Live Hux Blog &rarr;](http://huangxuan.me)
-
-## If you like Hux Blog, Please star [huxpro.github.io repo](https://github.com/Huxpro/huxpro.github.io) instead of this! Thank you!
+## My Chinese name is Rao Zihao and English name is Steve. I graduated from Tianjin Polytechnic University and majored in software engineering. I will study at the Software College of Zhejiang University during my master's degree. This is my blog. I will regularly post some summary blogs or other interesting things on it. Welcome to learn from each other!
