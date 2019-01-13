@@ -4,3 +4,11 @@ node_modules
 */.DS_Store
 */*/.DS_Store
 *.sh
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+**/target/
+/log
