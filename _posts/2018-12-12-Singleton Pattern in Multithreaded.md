@@ -44,7 +44,7 @@ tags: 设计模式，单例模式，多线程
 
 1. ##### 懒汉模式
 
-   ```jade
+   ```java
    public class Singleton {  
        /*该处不需要volatile关键字，因为synchronized已可实现变量共享 */
        private static Singleton singleton; 
@@ -65,7 +65,7 @@ tags: 设计模式，单例模式，多线程
 
 2. **饿汉模式**
 
-   ```jade
+   ```java
    public class Singleton {  
        /*初始化代码，类加载时就初始化静态属性*/
        private static Singleton instance = new Singleton();  
@@ -80,7 +80,7 @@ tags: 设计模式，单例模式，多线程
 
 3. **静态内部类**
 
-   ```jade
+   ```java
    public class Singleton {  
        /*静态内部类延迟初始化*/
        private static class SingletonHolder {  
@@ -97,7 +97,7 @@ tags: 设计模式，单例模式，多线程
 
 4. **枚举**
 
-   ```jade
+   ```java
    public enum Singleton {  
        INSTANCE;  
        public void whateverMethod() {  
@@ -131,18 +131,22 @@ tags: 设计模式，单例模式，多线程
 
    最近做的`BI可视化系统`就有这样一个需求，用户可以建立多个同种数据源不同数据库的对应数据集。当用户如果反复切换不同数据集进行数据查看，就可能总是需要销毁上一个数据库连接池新建下一个。这是非常消耗资源的操作！所以我打算通过创建一个单例类作为缓存，将创建了的连接池进行缓存避免不必要的开销！
 
-   ```jade
+   ```java
    /*针对Cassandra数据库连接池创建的缓存，这里直接使用枚举方式创建单例类*/
-   public enum ConnectionProvider implements ConnectionManager<Session, CassandraDataSource> {
+   public enum ConnectionProvider implements 
+       ConnectionManager<Session, CassandraDataSource> {
    
        INSTANCE;
        /*连接池缓存容器*/
-       public static final ConcurrentHashMap<CassandraConnectInfo, Cluster> CACHE = new ConcurrentHashMap(10);
+       public static final ConcurrentHashMap<CassandraConnectInfo, Cluster> 
+           CACHE = new ConcurrentHashMap(10);
     
        /*获取连接方法*/
-       private Session getConnection(CassandraConnectInfo connectInfo) throws DataSourceException {
+       private Session getConnection(CassandraConnectInfo connectInfo) 
+           throws DataSourceException {
            /*每一次获取连接之前都先根据连接信息看容器中是否有缓存，有则取，无则新建并缓存*/
-            Cluster cluster = CACHE.computeIfAbsent(connectInfo, d -> instanceSession(connectInfo));
+            Cluster cluster = CACHE
+                .computeIfAbsent(connectInfo, d -> instanceSession(connectInfo));
            return cluster.connect();
        }
        /*其他代码省略*/
