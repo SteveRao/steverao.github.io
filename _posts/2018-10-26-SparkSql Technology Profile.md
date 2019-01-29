@@ -25,7 +25,7 @@ tags: Spark，SparkSql, 数据可视化
 ------
 - 在使用`SparkSql`技术前，需要在maven项目的`pom.xml`文件中添加如下依赖：
 
-  ```jade
+  ```xml
   <dependency>
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-sql_2.11</artifactId>
@@ -42,14 +42,14 @@ tags: Spark，SparkSql, 数据可视化
 - `SparkSession`类作为`SparkSql`程序的入口类(`SparkSession`是对`Spark`早期版本中的`SqlContext`和`HiveContext`的组合，继承了它们所具有的功能并进行了一些扩展)，描述了程序的相关基本信息。编写一个`SparkSql`程序首先要创建一个`SparkSession`对象。
 
 - `SparkSql`初始化代码：
-```jade
+```java
 SparkSession spark = SparkSession.builder()
-.appName("test")
-.master(“local”)
+.appName("Test")
+.master("local")
 .getOrCreate();
 ```
 
-- 其中appName参数是一个在集群UI上展现应用程序的名称，master描述的是一个集群的URL(cluster URL)。它有几种设置模式：。由于我们这里是在本地搭建的一个测试小应用，所以`appName=’test’`，`master=’local’`。
+- 其中appName参数是一个在集群UI上展现应用程序的名称，master描述的是一个集群的URL(cluster URL)。它有几种设置模式，由于我们这里是在本地搭建的一个测试小应用，所以`appName="Test"`，`master="local"`。
 
 
 
@@ -64,7 +64,7 @@ SparkSession spark = SparkSession.builder()
  
 
 - **结构描述**：其结构就像传统关系型数据库中的表，以列的形式构成，包含列名和列数据以及列结构信息等（详情见下图，其是一个`DataFrame`打印出的结构）但与此同行，它在数据读取等操作上进行了很多的优化，例如，可以按列读取字段。相比于传统关系数据库中的表在数据处理上的性能有很大提升。
-```jade
+```java
 //DataFrame打印结果
 +---+------+-----+
 |age|height| name|
@@ -127,7 +127,7 @@ SparkSession spark = SparkSession.builder()
 
 - **UDF示例**
 
-   ```jade
+   ```java
    //通过SparkSession类对象调用udf()方法创建isNull（）函数
    spark.udf().register("isNull",    //函数名，和下行函数逻辑代码
    (String field, String defaultValue) -> field==null? defaultValue : field,
@@ -152,7 +152,7 @@ SparkSession spark = SparkSession.builder()
 ------
 
 - **读取文件数据**
-```jade
+```java
 //调用SparkSession对象的read()方法读取json文件构造DataFrame
 Dataset<Row> in =spark.read().json("**/user.json");
 in.show();
@@ -165,7 +165,7 @@ in.show();
 | 19|   165|james|
 +---+------+-----+
 ```
-```jade
+```java
 //读取csv文件
 Dataset<Row> in = spark.read().format("csv").csv("**/user.csv");
 in.show();
@@ -181,7 +181,7 @@ in.show();
 
 
 - **数据库数据**
-```jade
+```java
 SparkConf conf = new SparkConf(true);
 SparkContext sc = new SparkContext("local", "Test", conf);
 SparkSession spark = SparkSession.builder()

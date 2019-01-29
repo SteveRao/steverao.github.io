@@ -67,7 +67,7 @@ tags: Cassandra，NoSQL，数据可视化
 - #####  Column结构
 
   `Column`是`Cassandra`所支持的最基本的数据模型，该模型由三个键值对构成。
-```jade
+```json
 {
     "name" :  "User Name" //列名，其实唯一的
     "value" :  "Steve"   //列值

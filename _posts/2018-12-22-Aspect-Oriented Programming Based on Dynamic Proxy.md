@@ -55,9 +55,9 @@ tags: 设计模式，代理模式，AOP
 1. **基本概念：**为需要代理的**一组类**写一个代理行为。
 2. **Java中支持的动态代理模式：**`JDK动态代理` 和 `CGLib动态代理`
 
-1. **JDK动态代理：**`Java1.3`开始提供该支持，主要有`Proxy`和`InvocationHandler`（接口）两个类。以下例子是为一些需要在方法执行前后进行性能监控的类创建的动态代理类案例：
+3. **JDK动态代理：**`Java1.3`开始提供该支持，主要有`Proxy`和`InvocationHandler`（接口）两个类。以下例子是为一些需要在方法执行前后进行性能监控的类创建的动态代理类案例：
 
-   ```jade
+   ```java
    /*被代理类接口*/
    public interface Waiter {
        void greetTo(String clientName);
@@ -71,7 +71,9 @@ tags: 设计模式，代理模式，AOP
    
        /*父类中没有，子类中另外添加的方法，该方法不能被代理*/
        public void smile(String clientName, int times) {
-           System.out.println("NaiveWaiter:smile to  " + clientName + times + "times...");
+           System.out.println("NaiveWaiter:smile to  " 
+                              + clientName + times 
+                              + "times...");
        }
    }
    
@@ -83,7 +85,8 @@ tags: 设计模式，代理模式，AOP
        }
    
        @Override
-       public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+       public Object invoke(Object proxy, Method method, Object[] args) 
+           throws Throwable {
            /*代理类为业务类提供的特殊代理服务*/
            System.out.println("Monitor begin!!!");
            /*通过反射调用业务类的目标方法*/
@@ -103,7 +106,10 @@ tags: 设计模式，代理模式，AOP
            /*将目标业务类与横切代码编织在一起*/
            PerformanceHandler handler = new PerformanceHandler(target);
            /*创建代理对象*/
-           Waiter proxy = (Waiter) Proxy.newProxyInstance(target.getClass().getClassLoader(), target.getClass().getInterfaces(), handler);
+           Waiter proxy = (Waiter) Proxy.newProxyInstance(
+               target.getClass().getClassLoader(), 
+               target.getClass().getInterfaces(), 
+               handler);
            /*通过代理类为业务类提供方法的被调用*/
            proxy.greetTo("steve");
            /*无法调用，接口中没有申明！由此可得出JKD动态代理的局限性*/
@@ -114,7 +120,7 @@ tags: 设计模式，代理模式，AOP
 
    运行结果输出：
 
-   ```jade
+   ```java
    Monitor begin!!!
    NaiveWaiter:greet to steve...
    Monitor end!!!
@@ -122,9 +128,9 @@ tags: 设计模式，代理模式，AOP
 
    从上述结果可以清楚地看到监控逻辑被成功地织入被代理类业务逻辑方法运行的前后位置。
 
-2. **CGLib动态代理：**通过以上代码及注释应该会发现`JDK动态代理`的局限性，对于没有通过接口定义业务方法的类，`CGLib`为其提供了动态代理的支持
+4. **CGLib动态代理：**通过以上代码及注释应该会发现`JDK动态代理`的局限性，对于没有通过接口定义业务方法的类，`CGLib`为其提供了动态代理的支持
 
-   ```jade
+   ```java
    public class CglibProxy implements MethodInterceptor {
        private Enhancer enhancer=new Enhancer();
        public Object getProxy(Class clazz){
@@ -137,7 +143,10 @@ tags: 设计模式，代理模式，AOP
    
        /*采用方法拦截器拦截所有父类（被代理类）方法的调用并顺势织如横切逻辑*/
        @Override
-       public Object intercept(Object o, Method method, Object[] args, MethodProxy methodProxy) throws Throwable {
+       public Object intercept(Object o, 
+                               Method method, 
+                               Object[] args, 
+                               MethodProxy methodProxy) throws Throwable {
            /*代理类为业务类提供的特殊代理服务*/
            System.out.println("Monitor begin!!!");
            /*通过代理类调用父类的方法*/
@@ -153,7 +162,8 @@ tags: 设计模式，代理模式，AOP
        public void CGLibProxy() {
            CglibProxy cglibProxy = new CglibProxy();
            /*动态生成子类的方式创建代理类*/
-           NaiveWaiter proxy = (NaiveWaiter) cglibProxy.getProxy(NaiveWaiter.class);
+           NaiveWaiter proxy = 
+           (NaiveWaiter) cglibProxy.getProxy(NaiveWaiter.class);
            proxy.greetTo("steve");
            /*由于代理类是目标类的子类所有可以调用目标类相对于其父类中额外添加的方法*/
            proxy.smile("alan", 10);
@@ -163,7 +173,7 @@ tags: 设计模式，代理模式，AOP
 
    运行结果输出：
 
-   ```jade
+   ```java
    Monitor begin!!!
    NaiveWaiter:greet to steve...
    Monitor end!!!
@@ -226,7 +236,7 @@ tags: 设计模式，代理模式，AOP
 
    - 如果希望`NaiveWaiter`能同时充当售货员角色，即可通过引介切面技术为`NaiveWaiter`新增`Seller`接口的实现。（以下是采用`@AspectJ`进行`AOP`的案例）
 
-   ```jade
+   ```java
    /*使用@Aspect定义一个切面*/
    @Aspect
    public class EnableSellerAspect {
@@ -237,26 +247,27 @@ tags: 设计模式，代理模式，AOP
    
    /*IOCjavaBean配置*/
    <aop:aspectj-autoproxy/>
-   <bean id="waiter" class="com.raozh.introduction.NaiveWaiter"></bean>
-   <bean class="com.raozh.introduction.EnableSellerAspect"></bean>
+   <bean id="waiter" class="com.raozh.introduction.NaiveWaiter"/>
+   <bean class="com.raozh.introduction.EnableSellerAspect"/>
    
    /*测试类*/
    public class DeclaredParentsTest {
        public static void main(String[] args) {
-           String configPath = "/application.xml";
-            ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(configPath);
-           Waiter waiter = (Waiter) ctx.getBean("waiter");
-           waiter.serveTo();
+            String configPath = "/application.xml";
+            ClassPathXmlApplicationContext ctx = 
+            new ClassPathXmlApplicationContext(configPath);
+            Waiter waiter = (Waiter) ctx.getBean("waiter");
+            waiter.serveTo();
            /*将NaiveWaiter转换成Seller*/
-           Seller seller = (Seller) waiter;
-           seller.sell();
+            Seller seller = (Seller) waiter;
+            seller.sell();
        }
    }
    ```
 
    运行结果输出:
 
-   ```jade
+   ```java
    NaiveWaiter executed serveTo!
    SmartSeller executed sell()!
    ```
