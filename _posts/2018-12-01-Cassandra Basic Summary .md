@@ -38,7 +38,7 @@ tags: Cassandra，NoSQL，数据可视化
 
 
 
-#### Cassandra数据模型
+#### 数据模型
 
 ------
 
@@ -69,9 +69,9 @@ tags: Cassandra，NoSQL，数据可视化
   `Column`是`Cassandra`所支持的最基本的数据模型，该模型由三个键值对构成。
 ```json
 {
-    "name" :  "User Name" //列名，其实唯一的
-    "value" :  "Steve"   //列值
-    "timestamp" : "123456789" //更新时间
+  "name" :  "User Name", //列名，其是唯一的
+  "value" :  "Steve",   //列值
+  "timestamp" : "123456789" //更新时间
 }
 ```
 
@@ -83,7 +83,7 @@ tags: Cassandra，NoSQL，数据可视化
 
 
 
-#### Cassandra的CQL（Cassandra Query Language）操作基本语法
+#### CQL（Cassandra Query Language）操作基本语法
 
 ------
 
@@ -95,7 +95,7 @@ tags: Cassandra，NoSQL，数据可视化
   2. [DataStax为java提供操作Cassandra的JDBC](https://www.cnblogs.com/youzhibing/p/6607082.html)
 
 
-#### Cassandra稍底层介绍
+#### 稍底层介绍
 
 ------
 
