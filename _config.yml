@@ -102,18 +102,18 @@ page-mathjax: false
 
 # Friends
 friends: [
-    {
-        title: "Spring Framework Documentation",
-        href: "https://docs.spring.io/spring/docs/current/spring-framework-reference/"
-    },{
-        title: "掘金",
-        href: "https://juejin.im/welcome"
-    },{
-        title: "leetCode",
-        href: "https://leetcode-cn.com/"
-    },{
-        title: "jQuery插件库",
-        href: "http://www.jq22.com/"
-    }
+{
+  title: "掘金",
+  href: "https://juejin.im/welcome"
+},{
+  title: "LeetCode",
+  href: "https://leetcode-cn.com/"
+},{
+  title: "jQuery插件库",
+  href: "http://www.jq22.com/"
+},{
+  title: "InfoQ",
+  href: "https://www.infoq.cn/"
+}
 ]
 
