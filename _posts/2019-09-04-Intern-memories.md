@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "京东实习回忆"
-subtitle:   "实习经历"
+subtitle:   "实习经历，故事"
 date:       2019-09-04
 author:     "ZihaoRao"
 header-img: "img/in-post/bg/night-sky.jpg"
@@ -51,7 +51,7 @@ tags: 软件开发工程师
 
 很高兴遇见你们，期待越来越来好。(这也是我离开时微信里发的朋友圈)
 
-前天下午抵浙，一场暴风雨将我从头到脚淋了个遍。在即将开始的研究生生活面前，也许这就是想告诉我一切又需要从“零”开始！
+前天下午抵浙，一场暴风雨将我从头到脚淋了个遍。在即将开始的研究生生活面前，也许这就是想告诉我一切又需要从“淋”开始！
 
 <img src="/img/in-post/content/intern-memories/zju.jpg" width="50%">
 
