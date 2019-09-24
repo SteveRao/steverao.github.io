@@ -129,10 +129,10 @@ https://github.com/kitian616/jekyll-TeXt-theme
       }
     }
 
-    var query = queryString(), 
+    var query = queryString(),
         _tag = query.tag;
 
-    init(); 
+    init();
     tagSelect(_tag);
 
     $tags.on('click', 'a', function() {   /* only change */
