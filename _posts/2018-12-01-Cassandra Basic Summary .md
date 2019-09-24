@@ -1,11 +1,13 @@
 ---
 layout:     post
 title:      "Cassandra数据库基础总结"
-subtitle:   "NoSQL数据库，分布式数据库，Cassandra，大数据存储"
+subtitle:   "NoSQL数据库"
 date:       2018-12-01
 author:     "ZihaoRao"
 header-img: "img/post-bg-bigdata.jpg"
-tags: Cassandra，NoSQL，数据可视化
+tags: NoSQL
+      数据库
+      大数据
 ---
 
 

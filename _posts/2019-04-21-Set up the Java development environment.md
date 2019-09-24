@@ -1,12 +1,12 @@
 ---
 layout:     post
 title:      "搭建Java开发环境"
-subtitle:   "配置Java EE开发环境，环境变量"
+subtitle:   "配置Java EE开发环境"
 date:       2019-04-21
 author:     "ZihaoRao"
 header-img: "img/in-post/bg/night-sky.jpg"
-
-tags: JAVA开发，配置环境
+tags: JAVA开发
+      配置环境
 ---
 
 

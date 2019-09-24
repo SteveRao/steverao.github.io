@@ -1,12 +1,11 @@
 ---
 layout:     post
 title:      "由动态代理到面向切面编程(AOP)"
-subtitle:   "面向切面编程(AOP)，动态代理"
+subtitle:   "面向切面编程(AOP)之动态代理"
 date:       2018-12-22
 author:     "ZihaoRao"
 header-img: "img/in-post/bg/night-sky.jpg"
-
-tags: 设计模式，代理模式，AOP
+tags: 设计模式
 ---
 
 
