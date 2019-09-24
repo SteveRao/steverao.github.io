@@ -5,7 +5,7 @@ subtitle:   "数据处理，数据可视化，SparkSql"
 date:       2018-10-26
 author:     "ZihaoRao"
 header-img: "img/post-bg-bigdata.jpg"
-tags: Spark，SparkSql, 数据可视化
+tags: Spark，SparkSql，数据可视化
 ---
 
 
