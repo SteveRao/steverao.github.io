@@ -3,9 +3,9 @@ title: Steve' Blog
 SEOTitle: 饶子昊的博客 | SteveRao Blog
 header-img: img/home-bg.jpg
 email: zihaorao@126.com
-description: "饶子昊，Web & ，Software Engineer| 这里是 @Steve饶子昊 的个人博客，与你一起发现更大的世界。"
-keyword: "Steve, @Steve饶子昊,@ZihaoRao 饶子昊的博客, SteveRao Blog, 饶子昊, 博客, 个人网站, 互联网, Java, 大数据，分布式，云原生， 后端, Java开发者"
-url: "https://steverao.github.io "              # your host, for absolute URL
+description: "饶子昊，Web & Software Engineer| 这里是 @Steve饶子昊 的个人博客，与你一起发现更大的世界。"
+keyword: "Steve, @Steve饶子昊, @zihaorao 饶子昊的博客, SteveRao Blog, 饶子昊, 博客, 个人网站, 互联网, Java, 大数据，分布式，云原生， 后端, Java开发者"
+url: "https://steverao.github.io"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
@@ -13,12 +13,12 @@ future: true
 
 # SNS settings
 RSS: false
-weibo_username:     1099171504@qq.com
+weibo_username: ZihaoRao
 #zhihu_username:     
-github_username:    steverao
+github_username: steverao
 #twitter_username:   
 #facebook_username:  
-linkedin_username:  /子昊-饶-9331a1175
+linkedin_username: in/子昊-饶-9331a1175
 
 
 
@@ -101,7 +101,7 @@ page-mathjax: false
 
 
 # Relevant links
-friends: [
+relevant-links: [
     {
         title: "Spring",
         href: "https://github.com/spring-projects/spring-framework"

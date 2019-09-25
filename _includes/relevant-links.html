@@ -1,8 +1,8 @@
-{% if site.friends %}
+{% if site.relevant-links %}
 <hr>
-<h5>Relevant Links</h5>
+<h5>RELEVANT LINKS</h5>
 <ul class="list-inline">
-    {% for link in site.friends %}
+    {% for link in site.relevant-links %}
     <li><a href="{{link.href}}">{{link.title}}</a></li>
     {% endfor %}
 </ul>
