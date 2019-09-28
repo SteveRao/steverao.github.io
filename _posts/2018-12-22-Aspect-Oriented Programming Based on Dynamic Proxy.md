@@ -61,13 +61,13 @@ tags: 设计模式
    public interface Waiter {
        void greetTo(String clientName);
    }
-   
+
    /*被代理类*/
    public class NaiveWaiter implements Waiter {
        public void greetTo(String clientName) {
            System.out.println("NaiveWaiter:greet to " + clientName + "...");
        }
-   
+
        /*父类中没有，子类中另外添加的方法，该方法不能被代理*/
        public void smile(String clientName, int times) {
            System.out.println("NaiveWaiter:smile to  " 
@@ -75,14 +75,14 @@ tags: 设计模式
                               + "times...");
        }
    }
-   
+
    public class PerformanceHandler implements InvocationHandler {
-   
+
        private Object target;
        public PerformanceHandler(Object target) {
            this.target = target;
        }
-   
+
        @Override
        public Object invoke(Object proxy, Method method, Object[] args) 
            throws Throwable {
@@ -95,8 +95,8 @@ tags: 设计模式
            return obj;
        }
    }
-   
-   
+
+
    public class ForumServiceTest {
        @Test
         public void JDKProxy() {
@@ -139,7 +139,7 @@ tags: 设计模式
            /*通过字节码技术动态创建被代理类子类：代理类*/
            return enhancer.create();
        }
-   
+
        /*采用方法拦截器拦截所有父类（被代理类）方法的调用并顺势织入横切逻辑*/
        @Override
        public Object intercept(Object o, 
@@ -155,7 +155,7 @@ tags: 设计模式
            return obj;
         }
    }
-   
+
    public class ForumServiceTest {
    @Test
        public void CGLibProxy() {
@@ -183,12 +183,12 @@ tags: 设计模式
 
    从上述例子可知，只要是属于被代理类中的方法( greetTo() 和 smile() )，都可以被成功的织入监视逻辑代码。
 
-3. **JDK动态代理与CGLib动态代理小结：**
+5. **JDK动态代理与CGLib动态代理小结：**
 
-   |    代理方式     |  代理对象  |                       性能                       | 代理与被代理间关系 |
-   | :-------------: | :--------: | :----------------------------------------------: | :----------------: |
-   |  `JDK动态代理`  | 需实现接口 |       创建过程简单，适合需要频繁创建的场景       |   **兄弟类关系**   |
-   | `CGLib动态代理` |   无要求   | 创建过程复杂但代理类性能好，适合为单例类创建代理 |    **继承关系**    |
+   |    代理方式     | 代理对象  |            性能            | 代理与被代理间关系 |
+   | :---------: | :---: | :----------------------: | :-------: |
+   |  `JDK动态代理`  | 需实现接口 |    创建过程简单，适合需要频繁创建的场景    | **兄弟类关系** |
+   | `CGLib动态代理` |  无要求  | 创建过程复杂但代理类性能好，适合为单例类创建代理 | **继承关系**  |
 
 
 
@@ -214,7 +214,6 @@ tags: 设计模式
 
    ![equation](/img/in-post/content/proxy-equation.png)
 
-   
 
    公式一中的`切点`：就表示一组规则，规定增强需要织入哪些特定的类及其特定方法，公式二中的`连接点信息`表示的是在特定方法的具体位置，例如：方法调用前或后等。如果能将上述公式关系弄清楚，就算基本上理解了面向切面编程的逻辑。
 
@@ -240,12 +239,12 @@ tags: 设计模式
                defaultImpl = SmartSeller.class)
        public Seller seller;
    }
-   
+
    /*IOCjavaBean配置*/
    <aop:aspectj-autoproxy/>
    <bean id="waiter" class="com.raozh.introduction.NaiveWaiter"/>
    <bean class="com.raozh.introduction.EnableSellerAspect"/>
-   
+
    /*测试类*/
    public class DeclaredParentsTest {
        public static void main(String[] args) {
@@ -286,7 +285,8 @@ tags: 设计模式
 
 ------
 
-1. 《精通Spring 4.X企业应用开发实践》第七、八章中的AOP和AspectJ基础知识
-2. [菜鸟教程之代理模式](http://www.runoob.com/design-pattern/proxy-pattern.html)
+- 《精通Spring 4.X企业应用开发实践》第七、八章中的AOP和AspectJ基础知识
 
+
+- [菜鸟教程之代理模式](http://www.runoob.com/design-pattern/proxy-pattern.html)
 

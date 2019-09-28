@@ -33,7 +33,6 @@ tags: 大数据
   </dependency> 
   ```
 
-  
 
 #### **初始化SparkSql**
 
@@ -61,7 +60,7 @@ SparkSession spark = SparkSession.builder()
 
 - **基本定义**：`DataFrame`是`SparkSql`中专门为处理大数据而提供的数据处理抽象单元——弹性分布式数据集。其中，***弹性：***指该数据集具有容错性和可恢复性，***分布式：***指该数据集中的操作计算任务可以被分成若干个切片并分配给集群中的机器进行单独计算，最后再合并结果，为大数据的处理提供了强有力地计算支持。
 
- 
+
 
 - **结构描述**：其结构就像传统关系型数据库中的表，以列的形式构成，包含列名和列数据以及列结构信息等（详情见下图，其是一个`DataFrame`打印出的结构）但与此同行，它在数据读取等操作上进行了很多的优化，例如，可以按列读取字段。相比于传统关系数据库中的表在数据处理上的性能有很大提升。
 ```java
@@ -132,7 +131,7 @@ SparkSession spark = SparkSession.builder()
    spark.udf().register("isNull",    //函数名，和下行函数逻辑代码
    (String field, String defaultValue) -> field==null? defaultValue : field,
    DataTypes.StringType);
-   
+
    //调用代码
    Dataset<Row> result = spark.sql("select a,isNull(b,'null') as b,c from table1");
    ```
@@ -210,12 +209,19 @@ in.show();
 
 ------
 
-1. [Spark大数据之DataFrame和Dataset](https://zhuanlan.zhihu.com/p/29830732)
-2. [Spark编程指南](http://spark.apachecn.org/docs/cn/2.2.0/rdd-programming-guide.html)
-3. [SparkRDD中转化操作和行动操作](https://blog.csdn.net/YQlakers/article/details/76056413)
-4. [SparkSql,DataFrames and Datasets Guide](http://spark.apachecn.org/docs/cn/2.2.0/sql-programming-guide.html#spark-sql-dataframes-and-datasets-guide)
-5. [IBM专家深入浅出降解Spark2](http://www.10tiao.com/html/157/201607/2653159975/1.html)
+- [Spark大数据之DataFrame和Dataset](https://zhuanlan.zhihu.com/p/29830732)
 
+
+- [Spark编程指南](http://spark.apachecn.org/docs/cn/2.2.0/rdd-programming-guide.html)
+
+
+- [SparkRDD中转化操作和行动操作](https://blog.csdn.net/YQlakers/article/details/76056413)
+
+
+- [SparkSql,DataFrames and Datasets Guide](http://spark.apachecn.org/docs/cn/2.2.0/sql-programming-guide.html#spark-sql-dataframes-and-datasets-guide)
+
+
+- [IBM专家深入浅出降解Spark2](http://www.10tiao.com/html/157/201607/2653159975/1.html)
 
 
 

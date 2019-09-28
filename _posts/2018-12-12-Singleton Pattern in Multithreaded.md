@@ -135,7 +135,7 @@ tags: 设计模式
    /*针对Cassandra数据库连接池创建的缓存，这里直接使用枚举方式创建单例类*/
    public enum ConnectionProvider implements 
        ConnectionManager<Session, CassandraDataSource> {
-   
+
        INSTANCE;
        /*连接池缓存容器*/
        public static final ConcurrentHashMap<CassandraConnectInfo, Cluster> 
@@ -165,12 +165,15 @@ tags: 设计模式
 
 
 
-#### 参考文献
+#### 参考资料
 
 ------
 
-1. [菜鸟教程之单例模式](http://www.runoob.com/design-pattern/singleton-pattern.html)
-2. 《精通Spring 4.X企业应用开发实践》第十一章中的ThreadLocal基础知识
-3. 《Java多线程编程核心技术》第六章单例模式与多线程
+- [菜鸟教程之单例模式](http://www.runoob.com/design-pattern/singleton-pattern.html)
 
+
+- 《精通Spring 4.X企业应用开发实践》第十一章中的ThreadLocal基础知识
+
+
+- 《Java多线程编程核心技术》第六章单例模式与多线程
 

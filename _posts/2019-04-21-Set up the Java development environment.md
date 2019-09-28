@@ -108,7 +108,8 @@ windows环境中下载图示`apache-maven-XXX-bin.zip`的可执行版本即可�
 
 ## 参考资料
 
-1. [Tomcat安装博客](http://www.jeecms.com/hjdj/479.htm)
-2. [菜鸟教程配置jdk环境变量](http://www.runoob.com/java/java-environment-setup.html)
+- [Tomcat安装博客](http://www.jeecms.com/hjdj/479.htm)
 
+
+- [菜鸟教程配置jdk环境变量](http://www.runoob.com/java/java-environment-setup.html)
 

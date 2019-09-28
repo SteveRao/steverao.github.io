@@ -111,8 +111,16 @@ tags: NoSQL
 
 ------
 
-1. 《Cassandra权威指南》
-2.  [Cassandra Query Language API](http://cassandra.apache.org/doc/latest/cql/index.html)
-3. [Cassandra高级操作之索引、排序以及分页](https://www.cnblogs.com/youzhibing/p/6617986.html)
-4. [DataStax为java提供操作Cassandra的JDBC](https://www.cnblogs.com/youzhibing/p/6607082.html)
-5. [Cassandra简介](https://www.cnblogs.com/loveis715/p/5299495.html)
+- 《Cassandra权威指南》
+
+
+- [Cassandra Query Language API](http://cassandra.apache.org/doc/latest/cql/index.html)
+
+
+- [Cassandra高级操作之索引、排序以及分页](https://www.cnblogs.com/youzhibing/p/6617986.html)
+
+
+- [DataStax为java提供操作Cassandra的JDBC](https://www.cnblogs.com/youzhibing/p/6607082.html)
+
+
+- [Cassandra简介](https://www.cnblogs.com/loveis715/p/5299495.html)
