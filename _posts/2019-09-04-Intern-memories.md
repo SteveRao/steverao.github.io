@@ -4,7 +4,8 @@ title:      "京东实习回忆"
 subtitle:   "我的空挡年"
 date:       2019-09-04
 author:     "ZihaoRao"
-header-img: "img/in-post/bg/night-sky.jpg"
+header-style:  text
+catalog: true
 tags: 故事
 ---
 
