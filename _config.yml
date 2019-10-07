@@ -99,9 +99,9 @@ service-worker: true
 page-mathjax: false
 
 # Gitalk settings
-comment_gitalk_clientId: Iv1.49d2a5283f8a818d
-comment_gitalk_clientSecret: 8c079ba0fc1bc7d5bcd2f17f0746d6ccf012de5f
-comment_gitalk_repo: steverao.github.io
+comment_gitalk_clientId: '84ca9b9672ca3a015ea6'
+comment_gitalk_clientSecret: 'fe2e938edb7d77a58abd549748249ff5e72bd15b'
+comment_gitalk_repo: 'steverao.github.io'
 
 # Relevant links
 relevant-links: [
