@@ -99,9 +99,9 @@ service-worker: true
 page-mathjax: false
 
 # Gitalk settings
-comment_gitalk_clientId: '84ca9b9672ca3a015ea6'
-comment_gitalk_clientSecret: 'fe2e938edb7d77a58abd549748249ff5e72bd15b'
-comment_gitalk_repo: 'steverao.github.io'
+comment_gitalk_clientId: 84ca9b9672ca3a015ea6
+comment_gitalk_clientSecret: fe2e938edb7d77a58abd549748249ff5e72bd15b
+comment_gitalk_repo: steverao.github.io
 
 # Relevant links
 relevant-links: [
@@ -142,4 +142,4 @@ relevant-links: [
 ]
 
 
-theme: jekyll-theme-time-machine
+#theme: jekyll-theme-time-machine
