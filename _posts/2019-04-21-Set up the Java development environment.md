@@ -4,6 +4,7 @@ title:      "搭建Java开发环境"
 subtitle:   "配置Java EE开发环境"
 date:       2019-04-21
 author:     "ZihaoRao"
+catalog: true
 header-img: "img/in-post/bg/night-sky.jpg"
 tags: JAVA开发
       配置环境
@@ -13,7 +14,7 @@ tags: JAVA开发
 
 
 
-#### 总体概述
+## 总体概述
 
 > java EE开发基础环境主要包括java开发工具**Jdk**，jar包管理工具**Maven**以及程序运行服务器**Tomcat**。虽然网上有很多相关环境搭建的博客或者资料，但每次需要搭建时找起来还是挺费时间，所以决定写一篇博客详细记录相关工具搭建过程为以后提供便利。                                                                                                                                             
 >

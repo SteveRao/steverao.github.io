@@ -4,6 +4,7 @@ title:      "Cassandra数据库基础总结"
 subtitle:   "NoSQL数据库"
 date:       2018-12-01
 author:     "ZihaoRao"
+catalog: true
 header-img: "img/post-bg-bigdata.jpg"
 tags: NoSQL
       数据库

@@ -12,7 +12,11 @@ layout: default
         background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')
     }
 </style>
+{% if page.header-style == 'text' %}
+<header class="intro-header style-text" >
+{% else %}
 <header class="intro-header" >
+{% endif %}
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -108,6 +112,22 @@ layout: default
                 {% endif %}
 
             </div>
+            <!-- Side Catalog Container -->
+        {% if page.catalog %}
+        <div class="
+            col-lg-2 col-lg-offset-0
+            visible-lg-block
+            sidebar-container
+            catalog-container">
+            <div class="side-catalog">
+                <hr class="hidden-sm hidden-xs">
+                <h5>
+                    <a class="catalog-toggle" href="#">CATALOG</a>
+                </h5>
+                <ul class="catalog-body"></ul>
+            </div>
+        </div>
+        {% endif %}
 
     <!-- Sidebar Container -->
             <div class="
@@ -196,7 +216,7 @@ layout: default
         anchors.options = {
           visible: 'always',
           placement: 'right',
-          icon: '#'
+          icon: ''
         };
         anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
     })

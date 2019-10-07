@@ -4,6 +4,7 @@ title:      "多线程环境中的单例模式"
 subtitle:   "单例模式与线程安全"
 date:       2018-12-12
 author:     "ZihaoRao"
+catalog: true
 header-img: "img/in-post/bg/night-sky.jpg"
 tags: 设计模式
       多线程

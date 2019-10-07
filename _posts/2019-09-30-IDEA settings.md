@@ -4,6 +4,7 @@ title:      "IDEA编辑器配置"
 subtitle:   "IDEA配置"
 date:       2019-09-30
 author:     "ZihaoRao"
+catalog: true
 header-img: "img/in-post/bg/night-sky.jpg"
 tags: 开发工具
       配置环境

@@ -4,6 +4,7 @@ title:      "由动态代理到面向切面编程(AOP)"
 subtitle:   "面向切面编程(AOP)之动态代理"
 date:       2018-12-22
 author:     "ZihaoRao"
+catalog: true
 header-img: "img/in-post/bg/night-sky.jpg"
 tags: 设计模式
 ---

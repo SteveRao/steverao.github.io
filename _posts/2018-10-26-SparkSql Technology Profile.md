@@ -4,6 +4,7 @@ title:      "SparkSql技术轮廓"
 subtitle:   "SparkSql大数据计算框架"
 date:       2018-10-26
 author:     "ZihaoRao"
+catalog: true
 header-img: "img/post-bg-bigdata.jpg"
 tags: 大数据
 ---
