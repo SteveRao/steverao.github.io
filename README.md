@@ -8,7 +8,7 @@
 
 # Reference Document
 
-My blog theme comes from **Jekyll Theme**. We can find more information on **[Official website](http://jekyllcn.com/)**
+My blog theme comes from **Jekyll Theme**. We can find more information on **[Official website](http://jekyllcn.com/)**. Thank to [@Xuan Huang's](https://github.com/Huxpro) contributions.
 
 
 
@@ -30,3 +30,21 @@ jekyll serve
 
 
 
+## Releases
+
+**V1.0**
+
+- **Comment** support [gitalk](https://github.com/gitalk/gitalk) officially.
+
+- Add **CATALOG** for each blog. 
+
+- Add `header-style: text` style for blog.
+
+- Add **Back-To-Top** function.
+
+  ​
+
+**V0.9**
+
+- **ARCHIVE** support.
+- Base funcitons in blog.
