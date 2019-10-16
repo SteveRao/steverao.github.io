@@ -22,25 +22,23 @@ tags: 开发工具
 
 ## 1 准备
 
-#### 1.1 说明
+#### 1.1 环境说明
 
 其实这门课程，[实验楼](https://www.shiyanlou.com/courses/115)提供了一个现成的实操环境，来帮助完成课程学习。但碍网络，平台操作不便和无法保存实验环境等因素，自己动手在本地搭建一个相关的实验环境还是很有必要的。
 
-github上作者[DeathKing](https://github.com/DeathKing)也提供了一个先关的[环境项目](https://github.com/DeathKing/hit-oslab)，但该项目最近好像没维护了，安装后Bochs虚拟机启动可能会出现无法加载操作系统的问题。
+github上作者[DeathKing](https://github.com/DeathKing)也提供了一个相关的[环境项目](https://github.com/DeathKing/hit-oslab)，但该项目最近好像没维护了，安装后Bochs虚拟机启动可能会出现无法加载操作系统的问题。
 
 最后，在经过各种尝试以后发现，可以将实验楼环境相关文件包下载到本地，再安装必要的相关工具后就可在本地构建出一个实验环境。
 
-#### 1.2 软件
-
-##### 1.2.1 操作系统
+#### 1.2 操作系统
 
 该环境构建在ubuntu操作系统之上，所以可以通过在本地安装ubuntu虚拟机构建所需操作系统。本次环境安装采用的是[Ubuntu 16.04](http://releases.ubuntu.com/16.04/)*（不建议用太新的版本）*
 
-##### 1.2.2 环境包
+#### 1.3 下载环境包
 
 在本地ubuntu命令行中键入如下命令，下载实验包，其中包括了包括了实验所需的所有工具和文件*（下载之前先在本地先安装git工具）*
 
-```
+```Shell
 git clone https://github.com/steverao/hit-oslab/oslab.git ~/
 ```
 
@@ -50,14 +48,14 @@ git clone https://github.com/steverao/hit-oslab/oslab.git ~/
 
 下载成功以后进入相关目录，并尝试如下命令通过Bochs启动Linux 0.11操作系统。
 
-```shell
+```Shell
 cd oslab
 ./run
 ```
 
 如出现如下错误
 
-```shell
+```Shell
 ./bochs/bochs-gdb: error while loading shared libraries: libSM.so.6: cannot open shared object file: No such file or directory
 ```
 
@@ -87,7 +85,7 @@ sudo apt-get install libx11-6:i386
 
 则通过如下命令下载对应缺失的库
 
-```shell
+```Shell
 sudo apt-get install libxpm4:i386
 ```
 
