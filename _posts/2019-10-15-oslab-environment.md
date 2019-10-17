@@ -1,12 +1,13 @@
 ---
 layout:     post
 title:      "操作系统实验（一）：环境搭建"
-subtitle:   "hit-oslab"
+subtitle:   "hit-oslab环境搭建"
 date:       2019-10-15
 author:     "ZihaoRao"
 catalog: true
 header-img: "img/in-post/bg/night-sky.jpg"
 tags: 开发工具
+      操作系统实验
 ---
 
 
