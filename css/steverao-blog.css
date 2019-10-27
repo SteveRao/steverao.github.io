@@ -903,6 +903,9 @@ samp {
     margin: 0;
     margin-bottom: 5px;
 }
+.post-container b{
+    font-size:15px;
+}
 
 .post-container li h1,
 .post-container li h2,
@@ -1840,7 +1843,7 @@ img::-moz-selection {
     display: block;
     max-width: 100%;
     height: auto;
-    margin: 1.5em auto 1.6em auto;
+    margin: 1.5em auto 0 auto;
 }
 
 /* Hux Optimize UserExperience */
@@ -2052,4 +2055,7 @@ img::-moz-selection {
         width: 4px;
         height: 7px
     }
+}
+.post-container div{
+    margin-bottom:15px;
 }
