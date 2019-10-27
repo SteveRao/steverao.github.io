@@ -25,7 +25,7 @@ tags: 故事
 
 由于不太喜欢身边所处的氛围，年末就想着来年一定要到大企业去实习也不枉这大把的自由时光。（其实从去年九月底身边人就建议我直接去大厂实习，并且当时也有这样的机会。但我还是希望多尝试一些可能性，觉得很多事情并没有对错，每一段特别的经历都很难得，就这样踏上了前往杭州的列车）
 
-<div align="center"><img src="/img/in-post/content/intern-memories/sucsoft.jpg" width="40%"/>公司所在大楼——浙大网新</div>
+<div align="center"><img src="/img/in-post/content/intern-memories/sucsoft.jpg" width="40%"/><b>公司所在大楼——浙大网新</b></div>
 
 
 
@@ -37,7 +37,7 @@ tags: 故事
 
 之后，我主动申请去了部门核心业务[票据系统](https://piaoju.jd.com/)项目组。该系统立足于企业间电子商票相关场景，为企业电子商票的贴现，承兑和收购等提供信息化服务。该系统刚发展一年就实现了百亿左右的交易额并获得了去年企业的年终大奖。项目组同事待我都非常的热情，因此参与项目迭代研发的过程也很顺利。在项目的参与过程中，我经历了从新需求的评审到最终上线的整个软件开发过程，在这其中见了很多也学了很多！
 
-<div align="center"><img src="/img/in-post/content/intern-memories/work-card.jpg" width="40%"/>京东工牌</div>
+<div align="center"><img src="/img/in-post/content/intern-memories/work-card.jpg" width="40%"/><b>京东工牌</b></div>
 
 
 
@@ -49,4 +49,4 @@ tags: 故事
 
 前天下午抵浙，一场暴风雨将我从头到脚淋了个遍。在即将开始的研究生生活面前，也许这就是想告诉我一切又需要从“淋”开始！
 
-<div align="center"><img src="/img/in-post/content/intern-memories/zju.jpg" width="50%"/>校门</div>
+<div align="center"><img src="/img/in-post/content/intern-memories/zju.jpg" width="50%"/><b>校门</b></div>

@@ -92,7 +92,7 @@ sudo apt-get install libxpm4:i386
 
 经过上述步骤，再次运行，如果出现如下画面则表示成功
 
-<div align="center"><img src="/img/in-post/content/oslab/environment/linux-setup.png" width="70%"/>成功启动</div>
+<div align="center"><img src="/img/in-post/content/oslab/environment/linux-setup.png" width="70%"/><b>成功启动</b></div>
 
 
 

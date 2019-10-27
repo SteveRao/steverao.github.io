@@ -30,7 +30,7 @@ tags: 操作系统
 
 结合下图便可较为清晰的理解上述概念：
 
-<div align="center"><img src="/img/in-post/content/exception/exception.png" width="70%"/>异常</div>
+<div align="center"><img src="/img/in-post/content/exception/exception.png" width="70%"/><b>异常</b></div>
 
 由图可知，异常就是响应处理器被某个**事件**打断正常程序执行序列的过程。这些事件可以和当前执行的指令相关，比如，发生虚拟内存缺页，算术溢出，或者一条指令试图除以零。另外这些事件也可与当前的指令执行无关，比如，一个系统定时器产生信号或者一个I/O请求完成。
 
@@ -44,19 +44,19 @@ tags: 操作系统
 
 **中断**是由外部硬件向处理器发起的异常信号，所以也叫外部硬件中断。在系统正常运行的过程中，当外部设备发生错误，或者有数据要传送（比如，从网络中接收到一个针对当前主机的数据包），或者处理器交给它的事情处理完了（比如，打印已经完成），它们都会拍一下处理器的肩膀，告诉它应当先把手头上的事情放一放，来临时处理一下。其具体执行示意图如下：
 
-<div align="center"><img src="/img/in-post/content/exception/interupt.png" width="70%"/>中断</div>
+<div align="center"><img src="/img/in-post/content/exception/interupt.png" width="70%"/><b>中断</b></div>
 
 #### 2.2 故障
 
 与由外部硬件所引发的中断不同，**故障**发生在处理器内部，是由执行的指令引起的。常见如内存缺页，算术溢出和除零等异常都属于故障。这也就是C++，Java等高级程序语言中常说的异常概念。其具体执行示意图如下：
 
-<div align="center"><img src="/img/in-post/content/exception/fault.png" width="70%"/>故障</div>
+<div align="center"><img src="/img/in-post/content/exception/fault.png" width="70%"/><b>故障</b></div>
 
 #### 2.3 陷阱
 
 与上述两种异常由意外事件引发不同的是，**陷阱**是**有意的**异常，是由执行一条执行在处理器内部的指令引发的结果。陷阱最重要的用途就是在用户程序和系统内核之间提供一个像过程调用一样的接口，叫**系统调用**。系统调用是操作系统为用户程序利用系统常见资源所提供的接口，其涉及到操作系统中非常多重要概念，后续也会单独通过一篇博文来详细对其介绍。Linux环境中常见的系统调用如，读写文件的*read/write*，创建执行进程的*fork/execve*等。其具体执行示意图如下：
 
-<div align="center"><img src="/img/in-post/content/exception/trap.png" width="70%"/>陷阱</div>
+<div align="center"><img src="/img/in-post/content/exception/trap.png" width="70%"/><b>陷阱</b></div>
 
 #### 2.4 小结
 
@@ -79,7 +79,7 @@ tags: 操作系统
 
 在操作系统启动过程中，系统会初始化一张异常表，其内容就是系统异常号与对应异常处理程序所在地址的一张映射表。表结构如下图：
 
-<div align="center"><img src="/img/in-post/content/exception/exception-table.png" width="70%"/>异常表</div>
+<div align="center"><img src="/img/in-post/content/exception/exception-table.png" width="70%"/><b>异常表</b></div>
 
 
 
@@ -164,7 +164,7 @@ program_end:
 
 程序结果显示如下图：
 
-<div align="center"><img src="/img/in-post/content/exception/result.png" width="70%"/>运行结果</div>
+<div align="center"><img src="/img/in-post/content/exception/result.png" width="70%"/><b>运行结果</b></div>
 
 由上述案例分析可知，应用程序想要使用计算机I/O硬件资源需要通过陷阱（系统调用）来实现。其与我们日常如此息息相关，以至于我们在使用计算机过程中的时时刻刻都在通过异常让处理器来响应我们发起的任务。
 

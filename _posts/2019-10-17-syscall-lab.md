@@ -296,7 +296,7 @@ tags: 操作系统实验
 
   命令执行后，很可能会报以下错误：
 
-  <div align="center"><img src="/img/in-post/content/oslab/syscall/fault.png" width="70%"/>异常</div>
+  <div align="center"><img src="/img/in-post/content/oslab/syscall/fault.png" width="70%"/><b>异常</b></div>
 
   这代表虚拟机操作系统中/usr/include/unistd.h文件中没有新增的系统调用调用号，使用如下命令编辑文件：
 
@@ -314,7 +314,7 @@ tags: 操作系统实验
 
   最后，再执行testlab2.sh脚本进行测试，结果如下则表示成功*（这里提醒一下，在虚拟机linux-0.11操作系统上操作一定要小心和迅速，不然系统可能卡顿导致无法修改或正常显示结果）：*
 
-  <div align="center"><img src="/img/in-post/content/oslab/syscall/success.png" width="70%"/>调用成功</div>
+  <div align="center"><img src="/img/in-post/content/oslab/syscall/success.png" width="70%"/><b>调用成功</b></div>
 
   ​
 
