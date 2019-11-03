@@ -24,7 +24,7 @@ tags: 开发工具
 
 ## 1.安装配置jdk
 
-- 首先进入[官网](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)下载对应的jdk安装包，进入官网下载页面，选择接受协议，点击对应的版本即可开始下载（下载需要登录Oracle账号，没有的注册一下）
+- 首先进入[Oracle官网](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)下载对应的jdk安装包，进入官网下载页面，选择接受协议，点击对应的版本即可开始下载（下载需要登录Oracle账号，没有的注册一下）
 
   <div align="center"><img src="/img/in-post/content/bigdata/hadoop/dl-jdk.png" width="70%"/><b>jdk下载</b></div>
 
@@ -40,7 +40,7 @@ tags: 开发工具
   ```
 
 
-- 配置java环境变量，在当前用户目录下，执行`vim ~/.bashrc`
+- 配置jdk环境变量，在当前用户目录下，执行`vim ~/.bashrc`命令打开用户环境变量配置文件添加下列jdk所需的环境变量：
 
   ```Shell
   export JAVA_HOME=/usr/local/jdk
@@ -65,11 +65,11 @@ tags: 开发工具
 
 ## 2.下载安装Hadoop
 
-- jdk安装后，接下来进行Hadoop的下载安装，首先进入[官网](https://hadoop.apache.org/releases.html)选择所需版本的hadoop安装包。本文所选安装版本如下图所示：
+- jdk安装后，接下来进行Hadoop的下载安装，先进入[Hadoop官网](https://hadoop.apache.org/releases.html)选择所需版本的安装包。本文所选安装版本如下图所示：
 
   <div align="center"><img src="/img/in-post/content/bigdata/hadoop/dl-hadoop.png" width="70%"/><b>hadoop下载</b></div>
 
-  下载后，与jdk安装过程类似。首先，将压缩包拷贝到linux操作系统当前用户主目录下。然后，在分别执行如下命令，完成文件的移动，解压和重命名以及权限修改等等。
+  下载后，与jdk安装过程类似。首先，将压缩包拷贝到linux操作系统当前用户主目录下。然后，在分别执行下列命令，完成文件的移动，解压和重命名以及权限修改等等。
 
   ```Shell
   # 移动
@@ -82,7 +82,7 @@ tags: 开发工具
   steve@master:~$ sudo chown -R steve:steve /usr/local/hadoop
   ```
 
-- 解压后，接下来开始配置hadoop对应的环境变量。与jdk环境变量配置类似，执行如下命令并在打开的文件中添加如下内容：
+- 解压后，接下来开始配置hadoop对应的环境变量。与jdk环境变量配置类似，执行如下命令打开用户环境变量配置文件在其中添加Hadoop所需的环境变量：
 
   ```Shell
   steve@master:~$ vim ~/.bashrc
@@ -96,7 +96,7 @@ tags: 开发工具
 
   <div align="center"><img src="/img/in-post/content/bigdata/hadoop/hadoop-success.png" width="70%"/><b>hadoop安装验证</b></div>
 
-- 在完成了以上最基本的jdk和hadoop安装以及环境变量配置后。接下来，就可以利用VMWare虚拟机的克隆功能克隆出master主机的两个副本，我们可以分别为其命名worker1和worker2，克隆后的虚拟机拥有与原主机一模一样的系统和文件。在这一步进行克隆免去了重复安装基本软件的工作。接下来我们要分别为三台虚拟机配置ip与域名映射，执行如下命令并在打开的文件中添加如下内容：
+- 在完成了以上最基本的jdk和hadoop安装和对应环境变量配置后。接下来，就可以利用VMWare虚拟机的克隆功能克隆出master节点的两个副本作为worker节点，我们可以分别为其命名worker1和worker2，克隆后的虚拟机拥有与原主机一模一样的系统和文件。不选择在一开始而是在这时进行克隆免去了重复安装基本软件的工作。接下来我们要分别为三台虚拟机配置IP与域名映射，执行下列命令并在打开的文件中添加集群中所有节点的IP和对应的域名映射：
 
   ```Shell
   steve@master:~$ sudo vim /etc/hosts
@@ -106,7 +106,7 @@ tags: 开发工具
   192.168.10.142 worker2
   ```
 
-  三台主机hosts文件配置好后，再分别为刚克隆出来的worker节点重命名，操作命令如下：
+  集群IP与域名映射配置好后，再分别为刚克隆出来的worker节点重命名，操作命令如下：
 
   ```Shell
   steve@master:~$ sudo hostname [名称]
@@ -121,31 +121,31 @@ tags: 开发工具
 
 ## 3.使用SSH实现集群通信
 
-为了实现集群之间任务调度过程中互相传输数据的通畅性，一般采用**Secure Shell**(安全外壳协议,SSH)完成主机间的认证与数据传输。通过步骤二目前我们已经有三台主机了：master, worker1和worker2。配置集群间的SSH通信配置过程如下：*（注意：下文主要是在worker2节点上演示）*
+为了实现集群之间任务调度过程中互相传输数据的通畅，一般采用**Secure Shell**(安全外壳协议,SSH)完成主机间的认证与数据传输。通过步骤二目前我们已经有三个节点了：master, worker1和worker2。集群间的SSH通信配置过程如下：*（注意：下文主要是在worker2节点上演示）*
 
-- 首先，分别在每一台主机上安装SSH server，安装命令如下：
+- 首先，分别在每一台主机上安装SSH server，执行如下命令完成安装：
 
   ```Shell
   steve@worker2:~$ sudo apt-get install openssh-server
   ```
 
-- 然后，在每一个主机上生成公私钥，生成命令如下：
+- 然后，分别在每一台主机上执行下列命令生成其所对应的公私钥：
 
   ```Shell
   steve@worker2:~$ ssh-keygen -t rsa
   ```
 
-  命令执行过程中，**所有的输入请求直接输入回车即可**，成功以后的显示如下图所示：
+  命令执行过程中，**所有的输入请求直接按回车即可**，成功以后的显示如下图所示：
 
   <div align="center"><img src="/img/in-post/content/bigdata/hadoop/ssh-keygen.png" width="70%"/><b>ssh公私钥生成</b></div>
 
-- 秘钥生成后，执行如下命令将本机公钥添加进认证文件末尾：
+- 密钥生成后，执行下列命令将本机公钥添加进认证文件末尾：
 
   ```Shell
   steve@worker2:~$ cat .ssh/id_rsa.pub >> .ssh/authorized_keys
   ```
 
-  完成命令后，我们可以在本地上验证一下公钥添加是否成功。执行如下命令登录worker2，第一次登录会要求输入密码，公钥添加成功以后后续登录就可免密。第一次登录页面结果如下图所示：
+  完成命令后，我们可以在本地上验证一下公钥添加是否成功。执行如下命令登录worker2，第一次登录会要求输入密码，公钥添加成功以后后续就可免密登录了。第一次登录页面结果如下图所示：
 
   ```Shell
   # 首先使用如下命令关闭集群中所有节点的防火墙，不然无法登录
@@ -156,7 +156,7 @@ tags: 开发工具
 
   <div align="center"><img src="/img/in-post/content/bigdata/hadoop/ssh-auth.png" width="70%"/><b>ssh单机验证</b></div>
 
-- 分别在三台主机上完成以上步骤，每台主机便可实现在本机上的免密登录。但对于集群来说这样没有任何意义，需要实现主机之间的免密登录才可保证集群的通信顺畅。因此需要将本机的公钥信息添加到集群中其他主机的认证文件末尾。该过程需要使用**scp**文件传输协议，具体操作过程如下：
+- 在每一台主机上完成以上步骤后，每台主机便可实现在本机上的免密登录。但对于集群来说这样没有任何意义，需要实现主机之间的免密登录才可实现集群间的通信顺畅。因此需要将本机的公钥信息添加到集群中其他主机的认证文件末尾。该过程可使用**scp**文件传输协议实现，具体操作过程如下：
 
 - 首先，通过以下命令将worker节点上的公钥文件传输给master节点，执行命令与成功结果分别如下：
 
@@ -174,7 +174,7 @@ tags: 开发工具
   #括号[x]的分别表示分别表示1和2
   ```
 
-  将所有的公钥添加到认证文件中以后，现在还只有master节点集群所有节点的公钥信息。因此还需要将master节点修改后的认证文件分别传输给集群中的所有worker节点，这个过程我们还是使用scp协议来实现：
+  将所有的公钥添加到认证文件中后，现在还只有master节点有集群所有节点的公钥信息。因此还需要将master节点的认证文件分别传输给集群中的所有其他worker节点，这个过程我们还是使用scp协议来做：
 
   <div align="center"><img src="/img/in-post/content/bigdata/hadoop/scp-auth.png" width="70%"/><b>传输认证文件</b></div>
 
@@ -207,7 +207,7 @@ tags: 开发工具
 
 - **配置hdfs-site.xml** 
 
-  修改HDFS核心配置文件`/usr/local/hadoop/etc/hadoop/hdfs-site.xml`，通过`dfs.replication`指定HDFS的备份因子为3，通过`dfs.name.dir`指定namenode节点的文件存储目录，通过`dfs.data.dir`指定datanode节点的文件存储目录。 
+  修改HDFS核心配置文件`/usr/local/hadoop/etc/hadoop/hdfs-site.xml`，通过`dfs.replication`指定HDFS的备份因子为3（该参数可根据集群节点数调整），通过`dfs.name.dir`指定namenode节点的文件存储目录，通过`dfs.data.dir`指定datanode节点的文件存储目录。 
 
   ```xml
   <configuration>
@@ -228,7 +228,7 @@ tags: 开发工具
 
 - **配置mapred-site.xml** 
 
-  拷贝mapred-site.xml.template为mapred-site.xml，在进行修改 
+  拷贝mapred-site.xml.template为mapred-site.xml，再进行修改 
 
   ```Shell
   cp /usr/local/hadoop/etc/hadoop/mapred-site.xml.template /usr/local/hadoop/etc/hadoop/mapred-site.xml  
@@ -274,9 +274,9 @@ tags: 开发工具
   master
   ```
 
-- 配置slaves文件*（master主机特有）* 
+- **配置slaves文件**（*master主机特有*）
 
-  修改`/usr/local/hadoop/etc/hadoop/slaves`文件，该文件指定哪些服务器节点是datanode节点。删除locahost，添加所有datanode节点的主机名，如下所示。 
+  修改`/usr/local/hadoop/etc/hadoop/slaves`文件，该文件指定哪些服务器节点是datanode节点。删除localhost，添加所有datanode节点的主机名，如下所示。 
 
   ```Shell
   vim /usr/local/hadoop/etc/hadoop/slaves
@@ -298,14 +298,14 @@ tags: 开发工具
 
 - **worker节点配置hadoop环境**
 
-  这里我们还是通过scp协议将master节点配置好的hadoop目录下的相关文件传输给各个worker节点替换其原来的hadoop目录。
+  最后，我们还是通过scp协议将master节点配置好的hadoop目录下的相关文件传输给各个worker节点替换其原来的hadoop目录。
 
   ```Shell
   # worker[x]根据实际情况修改
   steve@master:~$ scp -r /usr/local/hadoop steve@worker[x]:/usr/local/hadoop
   ```
 
-  不过，在将hadoop目录传给了所有的worker节点后，worker节点需要将hadoop目录中的slave文件删除，因为该文件只有master节点才拥有。
+  不过，在将hadoop目录传给了所有的worker节点后，各worker节点需要将hadoop目录中的slave文件删除，因为该文件只有master节点才拥有。
 
 #### Hadoop集群启动
 
@@ -331,9 +331,11 @@ tags: 开发工具
 
   <div align="center"><img src="/img/in-post/content/bigdata/hadoop/hadoop-worker-process.png" width="50%"/><b>hadoop集群worker节点中进程</b></div>
 
-- 最后，还可以在浏览器中通过192.168.10.138:50070*（master ip地址:端口）*的方式访问hadoop集群的可视化管理界面，如下图所示：
+- **查看Hadoop集群管理web UI**
 
-  <div align="center"><img src="/img/in-post/content/bigdata/hadoop/hadoop-ui.png" width="70%"/><b>hadoop集群管理UI</b></div>
+  在浏览器中通过192.168.10.138:50070*（master ip地址:端口）*的方式可访问Hadoop提供的集群可视化管理界面，如下图所示：
+
+  <div align="center"><img src="/img/in-post/content/bigdata/hadoop/hadoop-ui.png" width="70%"/><b>hadoop集群管理web UI</b></div>
 
 
 
