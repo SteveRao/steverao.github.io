@@ -13,28 +13,28 @@ tags: 操作系统实验
 
 
 
-## 前言
-
+### 前言
+---
 > ***I hear and I forget, I see and I remember, I do and I understand！***
 >
 > 本文是哈工大李志军老师操作系统实验系列实验二：“系统调用”实验过程的记录*（因为仅是实验记录，文中实验原理性解释较少）*                                                                                         
 
 
 
-## 1 实验目的
-
+### 1 实验目的
+---
 - 建立对系统调用接口的深入认识；
 
 - 掌握系统调用的基本过程；
 
 - 能完成系统调用的全面控制；
 
-- 为后续实验做准备。
+- 为后续实验做准备；
 
   ​
 
-## 2 实验内容
-
+### 2 实验内容
+---
 1. 在Linux 0.11内核中添加一个名叫`iam()`的系统调用:
 
    ```c
@@ -55,9 +55,9 @@ tags: 操作系统实验
 
    ​
 
-## 3 实验步骤
-
-本次实验的环境请参考[操作系统实验（一）：环境搭建](https://steverao.github.io/2019/10/15/oslab-environment/)，由于实验需要修改的是Linux 0.11系统内核，所以实验需要改动的文件都在linux-0.11目录下。本次实验一共需要改动**unistd.h**，**sys.h**，**system_call.s**和**Makefile**内核四个文件，并新增**who.c**，**iam.c**和**whoami.c**三个文件。详细实验步骤如下：
+### 3 实验步骤
+---
+&emsp;&emsp;本次实验的环境请参考[操作系统实验（一）：环境搭建](https://steverao.github.io/2019/10/15/oslab-environment/)，由于实验需要修改的是Linux 0.11系统内核，所以实验需要改动的文件都在linux-0.11目录下。本次实验一共需要改动**unistd.h**，**sys.h**，**system_call.s**和**Makefile**内核四个文件，并新增**who.c**，**iam.c**和**whoami.c**三个文件。详细实验步骤如下：
 
 - 系统调用通过陷阱机制（软中断）从用户态进入内核态进而在内核中调用对应的异常处理程序，所以先为新增的系统调用设置**调用号**。修改linux-0.11/include/unistd.h
 
@@ -318,8 +318,8 @@ tags: 操作系统实验
 
   ​
 
-## 参考资料
-
+### 参考资料
+---
 - [哈尔滨工业大学操作系统课程，李治军](https://www.bilibili.com/video/av17036347?from=search&seid=11186295937821986776)
 - [操作系统实践](https://www.kancloud.cn/digest/os-experiment/120078)
 - [哈工大操作系统实验三：系统调用](https://blog.csdn.net/yuebowhu/article/details/78755728)

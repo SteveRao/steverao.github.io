@@ -15,15 +15,15 @@ tags: 开发工具
 
 
 
-## 总体概述
-
+### 总体概述
+---
 > 这是一篇迟到了一年的博文，去年学习Spark SQL 期间曾为跑分布式任务搭建过该集群一次，由于当时对很多东西都不熟悉花了不少时间。这次为了大数据实验又要重新搭建一次环境，但相对于第一次来说快多了。另外非常不建议在单机中搭建集群来完成课程实验之类的任务，因为涉及到集群间的调用等等问题速度很慢，[Hadoop的本地模式](https://blog.csdn.net/l_15156024189/article/details/81810553)也许是更好的选择！*（注意：本文搭建集群所使用的操作系统是Ubuntu 16.04）*
 >
 
 
 
-## 1.安装配置jdk
-
+### 1.安装配置jdk
+---
 - 首先进入[Oracle官网](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)下载对应的jdk安装包，进入官网下载页面，选择接受协议，点击对应的版本即可开始下载（下载需要登录Oracle账号，没有的注册一下）
 
   <div align="center"><img src="/img/in-post/content/bigdata/hadoop/dl-jdk.png" width="70%"/><b>jdk下载</b></div>
@@ -63,8 +63,8 @@ tags: 开发工具
 
 
 
-## 2.下载安装Hadoop
-
+### 2.下载安装Hadoop
+---
 - jdk安装后，接下来进行Hadoop的下载安装，先进入[Hadoop官网](https://hadoop.apache.org/releases.html)选择所需版本的安装包。本文所选安装版本如下图所示：
 
   <div align="center"><img src="/img/in-post/content/bigdata/hadoop/dl-hadoop.png" width="70%"/><b>hadoop下载</b></div>
@@ -119,9 +119,9 @@ tags: 开发工具
 
 
 
-## 3.使用SSH实现集群通信
-
-为了实现集群之间任务调度过程中互相传输数据的通畅，一般采用**Secure Shell**(安全外壳协议,SSH)完成主机间的认证与数据传输。通过步骤二目前我们已经有三个节点了：master, worker1和worker2。集群间的SSH通信配置过程如下：*（注意：下文主要是在worker2节点上演示）*
+### 3.使用SSH实现集群通信
+---
+&emsp;&emsp;为了实现集群之间任务调度过程中互相传输数据的通畅，一般采用**Secure Shell**(安全外壳协议,SSH)完成主机间的认证与数据传输。通过步骤二目前我们已经有三个节点了：master, worker1和worker2。集群间的SSH通信配置过程如下：*（注意：下文主要是在worker2节点上演示）*
 
 - 首先，分别在每一台主机上安装SSH server，执行如下命令完成安装：
 
@@ -183,8 +183,8 @@ tags: 开发工具
 
 
 
-## 4.配置Hadoop集群
-
+### 4.配置Hadoop集群
+---
 #### Hadoop集群配置
 
 - **配置core-site.xml** 
@@ -340,7 +340,7 @@ tags: 开发工具
 
 
 
-## 参考资料
-
+### 参考资料
+---
 - [Hadoop分布式集群搭建](http://www.ityouknow.com/hadoop/2017/07/24/hadoop-cluster-setup.html)
 - [Hadoop本地模式、伪分布式和全分布式集群安装与部署](https://blog.csdn.net/l_15156024189/article/details/81810553)

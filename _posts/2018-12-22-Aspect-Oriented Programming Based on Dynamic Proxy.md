@@ -14,16 +14,14 @@ tags: 设计模式
 
 
 ### 总体概述
-
+---
 > 相比于**继承**这种`Java`自提供的*纵向*抽取子类相同部分构造父类，达到代码复用目的的方式。`代理`或者`AOP`为*横向*的代码冗余提供了一种解决方法。其终极目的是为了实现代码的复用与解耦。                                                                                                                                               
 >
 
 
 
 ### 1.代理总述
-
-------
-
+---
 1. ##### 代理设计模式
 
    `代理设计模式`作为`Java`提供的一种结构型模式，代理类帮助所代理的对象完成一些与其核心功能无关的繁杂事务，还被代理对象一个逻辑清晰的世界。
@@ -38,8 +36,7 @@ tags: 设计模式
 
 
 ### 2.代理实现——静态代理
-
-------
+---
 
 1. **基本概念：**为需要代理的**某一个类**写一个代理行为。
 2. **案例说明：**[静态代理模式](http://www.runoob.com/design-pattern/proxy-pattern.html)
@@ -49,8 +46,7 @@ tags: 设计模式
 
 
 ### 3.代理实现——动态代理
-
-------
+---
 
 1. **基本概念：**为需要代理的**一组类**写一个代理行为。
 2. **Java中支持的动态代理模式：**`JDK动态代理` 和 `CGLib动态代理`
@@ -97,36 +93,34 @@ tags: 设计模式
        }
    }
 
-
    public class ForumServiceTest {
-       @Test
-        public void JDKProxy() {
-           /*被代理类目标业务类*/
-           NaiveWaiter target = new NaiveWaiter();
-           /*将目标业务类与横切代码编织在一起*/
-           PerformanceHandler handler = new PerformanceHandler(target);
-           /*创建代理对象*/
-           Waiter proxy = (Waiter) Proxy.newProxyInstance(
-               target.getClass().getClassLoader(), 
-               target.getClass().getInterfaces(), 
-               handler);
-           /*通过代理类为业务类提供方法的被调用*/
-           proxy.greetTo("steve");
-           /*无法调用，接口中没有申明！由此可得出JKD动态代理的局限性*/
-           //proxy.show()
-       }
+      @Test
+       public void JDKProxy() {
+          /*被代理类目标业务类*/
+          NaiveWaiter target = new NaiveWaiter();
+          /*将目标业务类与横切代码编织在一起*/
+          PerformanceHandler handler = new PerformanceHandler(target);
+          /*创建代理对象*/
+          Waiter proxy = (Waiter) Proxy.newProxyInstance(
+              target.getClass().getClassLoader(), 
+              target.getClass().getInterfaces(), 
+              handler);
+          /*通过代理类为业务类提供方法的被调用*/
+          proxy.greetTo("steve");
+          /*无法调用，接口中没有申明！由此可得出JKD动态代理的局限性*/
+          //proxy.show()
+      }
    }
    ```
 
    运行结果输出：
-
-   ```java
+   ```
    Monitor begin!!!
    NaiveWaiter:greet to steve...
    Monitor end!!!
    ```
 
-   从上述结果可以清楚地看到监控逻辑被成功地织入被代理类业务逻辑方法运行的前后位置。
+&emsp;&emsp;从上述结果可以清楚地看到监控逻辑被成功地织入被代理类业务逻辑方法运行的前后位置。
 
 4. **CGLib动态代理：**通过以上代码及注释应该会发现`JDK动态代理`的局限性，对于没有通过接口定义业务方法的类，`CGLib`为其提供了动态代理的支持
 
@@ -196,8 +190,7 @@ tags: 设计模式
 
 
 ### 4.基于动态代理的面向切面编程（AOP Aspect Oriented Programing）
-
-------
+---
 
 1. **面向切面编程引入：**相比于继承实现的纵向代码复用，动态代理解决了一个横向的代码复用难题，但动态代理在织入横切逻辑方面不够灵活。正因此，`面向切面编程(AOP)`在动态代理技术基础上，通过增加连接点、切点和增强等概念让织入横切逻辑变更加灵活与可控！
 
@@ -272,8 +265,7 @@ tags: 设计模式
 
 
 ### 5.小结
-
-------
+---
 
 - 首先通过介绍代理设计模式讲述代理类的作用与意义，再顺势引入了静态代理和动态代理的概念。
 - 重点通过对比介绍`JDK`和`CGLib`两种动态代理的案例展示了动态代理的意义、实现过程和使用要求。
@@ -283,11 +275,8 @@ tags: 设计模式
 
 
 ### 参考资料
-
-------
+---
 
 - 《精通Spring 4.X企业应用开发实践》第七、八章中的AOP和AspectJ基础知识
-
-
 - [菜鸟教程之代理模式](http://www.runoob.com/design-pattern/proxy-pattern.html)
 
