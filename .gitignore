@@ -12,4 +12,4 @@ node_modules
 *.ipr
 **/target/
 /log
-!/.jekyll-cache/
+.jekyll-cache
