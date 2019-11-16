@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "操作系统（二）：处理器内存管理"
+title:      "操作系统（二）：内存管理"
 subtitle:   "x86处理器内存管理"
 date:       2019-10-13
 author:     "ZihaoRao"
