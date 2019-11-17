@@ -2,7 +2,7 @@
 layout:     post
 title:      "操作系统（二）：内存管理"
 subtitle:   "x86处理器内存管理"
-date:       2019-10-13
+date:       2019-10-11
 author:     "ZihaoRao"
 catalog: true
 header-img: "img/in-post/bg/night-sky.jpg"

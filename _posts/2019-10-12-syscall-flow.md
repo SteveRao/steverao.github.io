@@ -2,7 +2,7 @@
 layout:     post
 title:      "操作系统（三）：系统调用"
 subtitle:   "系统调用简述"
-date:       2019-10-13
+date:       2019-10-12
 author:     "ZihaoRao"
 catalog: true
 header-img: "img/in-post/bg/night-sky.jpg"
@@ -36,7 +36,7 @@ tags: 操作系统
 
 &emsp;&emsp;所以对于一些重要的软硬件资源的调用只有操作系统程序有相关权限。而用户程序有时又需要利用相关系统资源哪该怎么办呢？正是基于这点，操作系统对于一些用户程序常用的计算机硬件服务通过**系统调用**这一接口形式为用户程序提供调用服务。系统调用与用户程序间关系见下图：
 
-<div align="center"><img src="/img/in-post/content/syscall/kernel-syscall.png" width="50%"/><b>Figure 1：System Call</b></div>
+<div align="center"><img src="/img/in-post/content/os/syscall/kernel-syscall.png" width="50%"/><b>Figure 1：System Call</b></div>
 
 
 
