@@ -2,7 +2,7 @@
 layout:     post
 title:      "操作系统（五）：文件系统（二）"
 subtitle:   "Minix文件系统之数据块缓存"
-date:       2019-12-01
+date:       2019-10-14
 author:     "ZihaoRao"
 catalog: true
 header-img: "img/in-post/bg/night-sky.jpg"

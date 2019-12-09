@@ -2,7 +2,7 @@
 layout:     post
 title:      "操作系统实验（一）：环境搭建"
 subtitle:   "hit-oslab环境搭建"
-date:       2019-10-15
+date:       2019-11-03
 author:     "ZihaoRao"
 catalog: true
 header-img: "img/in-post/bg/night-sky.jpg"

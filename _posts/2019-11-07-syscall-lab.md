@@ -2,7 +2,7 @@
 layout:     post
 title:      "操作系统实验（三）：系统调用"
 subtitle:   "系统调用实验"
-date:       2019-10-17
+date:       2019-11-07
 author:     "ZihaoRao"
 catalog: true
 header-img: "img/in-post/bg/night-sky.jpg"

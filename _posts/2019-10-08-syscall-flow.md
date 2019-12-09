@@ -2,7 +2,7 @@
 layout:     post
 title:      "操作系统（三）：系统调用"
 subtitle:   "系统调用简述"
-date:       2019-10-12
+date:       2019-10-08
 author:     "ZihaoRao"
 catalog: true
 header-img: "img/in-post/bg/night-sky.jpg"

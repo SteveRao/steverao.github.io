@@ -2,7 +2,7 @@
 layout:     post
 title:      "操作系统（六）：文件系统（三）"
 subtitle:   "Minix文件系统之文件视图"
-date:       2019-12-05
+date:       2019-10-18
 author:     "ZihaoRao"
 catalog: true
 header-img: "img/in-post/bg/night-sky.jpg"

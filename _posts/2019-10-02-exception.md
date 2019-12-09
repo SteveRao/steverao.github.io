@@ -2,7 +2,7 @@
 layout:     post
 title:      "操作系统（一）：异常"
 subtitle:   "中断，陷阱，故障"
-date:       2019-10-10
+date:       2019-10-02
 author:     "ZihaoRao"
 catalog: true
 header-img: "img/in-post/bg/night-sky.jpg"
