@@ -57,7 +57,7 @@ tags: 操作系统实验
 
 ### 3 实验步骤
 ---
-&emsp;&emsp;本次实验的环境请参考[操作系统实验（一）：环境搭建](https://steverao.github.io/2019/10/15/oslab-environment/)，由于实验需要修改的是Linux 0.11系统内核，所以实验需要改动的文件都在linux-0.11目录下。本次实验一共需要改动**unistd.h**，**sys.h**，**system_call.s**和**Makefile**内核四个文件，并新增**who.c**，**iam.c**和**whoami.c**三个文件。详细实验步骤如下：
+&emsp;&emsp;本次实验的环境请参考[操作系统实验（一）：环境搭建](https://steverao.github.io/2019/11/03/oslab-environment/)，由于实验需要修改的是Linux 0.11系统内核，所以实验需要改动的文件都在linux-0.11目录下。本次实验一共需要改动**unistd.h**，**sys.h**，**system_call.s**和**Makefile**内核四个文件，并新增**who.c**，**iam.c**和**whoami.c**三个文件。详细实验步骤如下：
 
 - 系统调用通过陷阱机制（软中断）从用户态进入内核态进而在内核中调用对应的异常处理程序，所以先为新增的系统调用设置**调用号**。修改linux-0.11/include/unistd.h
 

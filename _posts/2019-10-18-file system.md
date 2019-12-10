@@ -112,7 +112,7 @@ extern struct file file_table[NR_FILE];
 
 #### 2.1 读写文件系统调用
 
-&emsp;&emsp;由之前[操作系统(三):系统调用]()和[操作系统实验(三):系统调用]()相关内容的基础可知。平时我们在C或其他高级语言中使用的类似于 printf(), scanf()以及 fopen()等文件操作函数底层是通过调用操作系统提供的 write()和 read()等系统调用来实现的。接下来我们通过 Linux-0.11中 write()和 read()系统调用的实现 sys_write()和sys_read()来看看操作系统到底是如何实现统一的文件视图：
+&emsp;&emsp;由之前[操作系统(三):系统调用](https://steverao.github.io/2019/10/08/syscall-flow/)和[操作系统实验(三):系统调用](https://steverao.github.io/2019/11/07/syscall-lab/)相关内容的基础可知。平时我们在C或其他高级语言中使用的类似于 printf(), scanf()以及 fopen()等文件操作函数底层是通过调用操作系统提供的 write()和 read()等系统调用来实现的。接下来我们通过 Linux-0.11中 write()和 read()系统调用的实现 sys_write()和sys_read()来看看操作系统到底是如何实现统一的文件视图：
 
 ```c
 /*linux-0.11/fs/read_write.c */
@@ -177,7 +177,7 @@ int sys_write(unsigned int fd,char * buf,int count)
 
 #### 2.2 块设备
 
-&emsp;&emsp;在文件系统上一篇文章[数据块缓存]()最后小结部分提出了文件系统如何通过统一的文件抽象获取需读写块的 dev和 block来调用缓存接口 geblk()实现管理块设备这一问题？接下来通过上文提到的 block_write()函数来回答上述问题（block_read()函数也类似就不在赘述）。
+&emsp;&emsp;在文件系统上一篇文章[数据块缓存](https://steverao.github.io/2019/10/14/file-system/)最后小结部分提出了文件系统如何通过统一的文件抽象获取需读写块的 dev和 block来调用缓存接口 geblk()实现管理块设备这一问题？接下来通过上文提到的 block_write()函数来回答上述问题（block_read()函数也类似就不在赘述）。
 
 ```c
 int block_write(int dev, long * pos, char * buf, int count)
