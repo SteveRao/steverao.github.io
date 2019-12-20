@@ -16,8 +16,9 @@ tags: 开发工具
 
 ### 总体概述
 ---
-> 作为Java研发，目前业界最主流的编辑器IDEA确实为我们工作提供了极大便利。但要定制出满足个人使用的最佳开发工具一般还是要花费一定时间完成一定的配置与插件安装。本文主要介绍IDEA中一些对提升开发效率十分有益的插件或配置流程。                                                                                                             
+> This article is written in Chinese. If necessary, please consider using [Google Translate](http://translate.google.com/translate?hl=en&sl=auto&tl=en&u=https://steverao.github.io/2019/09/30/IDEA-settings/)
 >
+> 作为Java研发，目前业界最主流的编辑器IDEA确实为我们工作提供了极大便利。但要定制出满足个人使用的最佳开发工具一般还是要花费一定时间完成一定的配置与插件安装。本文主要介绍IDEA中一些对提升开发效率十分有益的插件或配置流程。                                                                                                             
 
 
 

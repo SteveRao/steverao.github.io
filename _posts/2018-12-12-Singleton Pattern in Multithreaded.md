@@ -16,8 +16,9 @@ tags: 设计模式
 
 ### 总体概述
 ---
-> 单例模式作为设计模式中较为简单但最常用的一种。理解其思想相对容易。但如何在开发中合理地将其应用却是需要勤加练习的！特别是对有状态属性的单例类如何确保其在多线程环境中"线程安全"地为系统提供服务是非常值得思考的问题。   ​                                                                                                                                            
+> This article is written in Chinese. If necessary, please consider using [Google Translate](http://translate.google.com/translate?hl=en&sl=auto&tl=en&u=https://steverao.github.io/2018/12/12/Singleton-Pattern-in-Multithreaded/)
 >
+> ​单例模式作为设计模式中较为简单但最常用的一种。理解其思想相对容易。但如何在开发中合理地将其应用却是需要勤加练习的！特别是对有状态属性的单例类如何确保其在多线程环境中"线程安全"地为系统提供服务是非常值得思考的问题。                                                                                                                                               
 
 
 

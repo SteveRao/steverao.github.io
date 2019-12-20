@@ -15,8 +15,9 @@ tags: 操作系统
 
 ### 总体概述
 ---
-> 操作系统层面的异常被认为是操作系统设计中里程碑式的成果，其是操作系统实现I/O、进程和虚拟内存机制以及用户态与内核态切换的基本机制。对其良好的认识对于理解其他计算机领域的知识与技术有着重要意义。                                                                                                                       
+> This article is written in Chinese. If necessary, please consider using [Google Translate](http://translate.google.com/translate?hl=en&sl=auto&tl=en&u=https://steverao.github.io/2019/10/02/exception/)
 >
+> 操作系统层面的异常被认为是操作系统设计中里程碑式的成果，其是操作系统实现I/O、进程和虚拟内存机制以及用户态与内核态切换的基本机制。对其良好的认识对于理解其他计算机领域的知识与技术有着重要意义。                                                                                                                       
 
 
 

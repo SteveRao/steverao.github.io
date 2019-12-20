@@ -16,8 +16,9 @@ tags: 操作系统
 
 ### 前言
 ---
-> 本文作为 Minix文件系统系列文章的最后一篇，将在前两篇的基础上对文件系统的统一文件视图结构进行介绍。这也是文件系统中最为核心和强大之处，它通过提供了一个统一的文件抽象结构来扩展计算机对所有外设的支持，让计算机变得前所未有的强大！                                                                                                                          
+> This article is written in Chinese. If necessary, please consider using [Google Translate](http://translate.google.com/translate?hl=en&sl=auto&tl=en&u=https://steverao.github.io/2019/10/18/file-system/)
 >
+> 本文作为 Minix文件系统系列文章的最后一篇，将在前两篇的基础上对文件系统的统一文件视图结构进行介绍。这也是文件系统中最为核心和强大之处，它通过提供了一个统一的文件抽象结构来扩展计算机对所有外设的支持，让计算机变得前所未有的强大！                                                                                                                          
 
 
 

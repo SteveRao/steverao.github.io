@@ -16,8 +16,9 @@ tags: 开发工具
 
 ### 前言
 ---
-> 最近在学习哈工大李志军老师的操作系统课程，这门课程最大的特点就是从操作系统源码级来讲述操作系统的核心知识点。这正合这段时间自己对底层基础知识学习的渴望。这篇文章主要记录一下搭建课程相关实验环境的方法，以便节省后来者时间。                                                                                         
+> This article is written in Chinese. If necessary, please consider using [Google Translate](http://translate.google.com/translate?hl=en&sl=auto&tl=en&u=https://steverao.github.io/2019/11/03/oslab-environment/)
 >
+> 最近在学习哈工大李志军老师的操作系统课程，这门课程最大的特点就是从操作系统源码级来讲述操作系统的核心知识点。这正合这段时间自己对底层基础知识学习的渴望。这篇文章主要记录一下搭建课程相关实验环境的方法，以便节省后来者时间。                                                                                         
 
 
 

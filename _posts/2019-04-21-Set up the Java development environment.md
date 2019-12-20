@@ -16,8 +16,9 @@ tags: JAVA开发
 
 ### 总体概述
 ---
-> java EE开发基础环境主要包括java开发工具**Jdk**，jar包管理工具**Maven**以及程序运行服务器**Tomcat**。虽然网上有很多相关环境搭建的博客或者资料，但每次需要搭建时找起来还是挺费时间，所以决定写一篇博客详细记录相关工具搭建过程为以后提供便利。                                                                                                                                             
+> This article is written in Chinese. If necessary, please consider using [Google Translate](http://translate.google.com/translate?hl=en&sl=auto&tl=en&u=https://steverao.github.io/2019/04/21/Set-up-the-Java-development-environment/)
 >
+> java EE开发基础环境主要包括java开发工具**Jdk**，jar包管理工具**Maven**以及程序运行服务器**Tomcat**。虽然网上有很多相关环境搭建的博客或者资料，但每次需要搭建时找起来还是挺费时间，所以决定写一篇博客详细记录相关工具搭建过程为以后提供便利。                                                                                                                                             
 
 
 

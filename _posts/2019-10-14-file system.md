@@ -16,6 +16,8 @@ tags: 操作系统
 
 ### 前言
 ---
+> This article is written in Chinese. If necessary, please consider using [Google Translate](http://translate.google.com/translate?hl=en&sl=auto&tl=en&u=https://steverao.github.io/2019/10/14/file-system/)
+>
 > 由于处理器与硬盘之间数据操作的速度具有显著差异，并且硬盘上数据的分布一般具有[局部性原理](https://baike.baidu.com/item/%E5%B1%80%E9%83%A8%E6%80%A7%E5%8E%9F%E7%90%86/3334556?fr=aladdin)特征，所以计算机科学家们想出了在处理器和硬盘之间通过额外增加一个空间不大但高速的缓存结构来提高处理器执行效率，这也就是缓存出现的背景。缓存在当今计算机系统中的应用案例比比皆是，文件系统当然也不例外，本文作为文件系统系列文章第二篇主要来对块设备文件结构层次中的**缓存**（Cache）部分进行总结归纳（后文所述文件系统未提及具体名称默认为 Minix 1.0） 。                                                                                                                       
 
 

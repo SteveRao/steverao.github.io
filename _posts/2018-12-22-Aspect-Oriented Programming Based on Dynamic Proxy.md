@@ -15,8 +15,9 @@ tags: 设计模式
 
 ### 总体概述
 ---
-> 相比于**继承**这种`Java`自提供的*纵向*抽取子类相同部分构造父类，达到代码复用目的的方式。`代理`或者`AOP`为*横向*的代码冗余提供了一种解决方法。其终极目的是为了实现代码的复用与解耦。                                                                                                                                               
+> This article is written in Chinese. If necessary, please consider using [Google Translate](http://translate.google.com/translate?hl=en&sl=auto&tl=en&u=https://steverao.github.io/2018/12/22/Aspect-Oriented-Programming-Based-on-Dynamic-Proxy/)
 >
+> 相比于**继承**这种`Java`自提供的*纵向*抽取子类相同部分构造父类，达到代码复用目的的方式。`代理`或者`AOP`为*横向*的代码冗余提供了一种解决方法。其终极目的是为了实现代码的复用与解耦。                                                                                                                                               
 
 
 

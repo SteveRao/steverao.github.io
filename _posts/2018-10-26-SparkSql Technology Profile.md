@@ -12,6 +12,8 @@ tags: 大数据
 
 ### **总体概述**
 ---
+> This article is written in Chinese. If necessary, please consider using [Google Translate](http://translate.google.com/translate?hl=en&sl=auto&tl=en&u=https://steverao.github.io/2018/10/26/SparkSql-Technology-Profile/)
+>
 > `Apache Spark` 是一个快速、多用途的集群计算系统。它提供了Scala、Java、Python和R语言等高级语言的`API`。本节主要介绍`Spark`中国处理结构化数据的工具——`SparkSql`，它的定位就是在内存中对结构化数据进行复杂的逻辑处理操作，它不仅支持多种数据源（Hive,Json,CSV和Parquet）的读取访问，还在兼备传统`Sql`语句规范同时，提供了`Dataframe`数据抽象来提供更多复杂数据处理操作，本文正是对`SparkSql`技术轮廓的总结。
 
 

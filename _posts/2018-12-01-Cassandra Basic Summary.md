@@ -13,6 +13,8 @@ tags: NoSQL
 
 ### 总体概述
 ---
+> This article is written in Chinese. If necessary, please consider using [Google Translate](http://translate.google.com/translate?hl=en&sl=auto&tl=en&u=https://steverao.github.io/2018/12/01/Cassandra-Basic-Summary/)
+>
 > 对于一位分布式存储系统的开发者，`Cassandra`无疑是非常引人注目的，它的无中心架构、高可用性、无缝扩展等继承自亚马逊`Dynamo`的特质，相对于其他主从架构的`NoSQL`系统更加简洁，也更具有美感！    ——Cassandra权威指南
 
 
