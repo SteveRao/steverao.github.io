@@ -18,6 +18,8 @@ tags: 操作系统
 > This article is written in Chinese. If necessary, please consider using [Google Translate](http://translate.google.com/translate?hl=en&sl=auto&tl=en&u=https://steverao.github.io/2019/10/05/memory-management-of-cpu/)
 >
 > 处理器（Central Processing Unit, CPU）作为计算机系统中最核心的部件，为计算机实现了最重要的计算功能。然而，巧妇难为无米之炊，没有信息数据处理器什么也干不了！处理器是如何获取硬盘数据来为计算机系统提供计算服务的呢？其实现方式就是本文将要介绍的处理器内存管理机制。
+>
+> **本文遵循[CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)开源分享协议，转载文章内容请注明出处。**
 
 
 

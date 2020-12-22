@@ -1,11 +1,11 @@
 # Site settings
 title: Steve's Blog
-SEOTitle: 饶子昊的博客 | SteveRao's Blog
+SEOTitle: SteveRao's Blog
 header-img: img/home-bg.jpg
 email: zihaorao@126.com
-description: "饶子昊，Web & Software Engineer| 这里是 @Steve饶子昊 的个人博客，与你一起发现更大的世界。"
-keyword: "Steve, @Steve饶子昊, @zihaorao 饶子昊的博客, SteveRao Blog, 饶子昊, 博客, 个人网站, 互联网, Java, 大数据，分布式，云原生， 后端, Java开发者"
-url: "https://http://121.199.33.65/"              # your host, for absolute URL
+description: "这里是Steve的个人博客，与你一起发现更大的世界。"
+keyword: "Steve, 博客, 个人网站, 互联网，分布式，云原生"
+url: "https://steverao.github.io"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.

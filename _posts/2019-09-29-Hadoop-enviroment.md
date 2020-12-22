@@ -20,6 +20,8 @@ tags: 开发工具
 > This article is written in Chinese. If necessary, please consider using [Google Translate](http://translate.google.com/translate?hl=en&sl=auto&tl=en&u=https://steverao.github.io/2019/09/29/Hadoop-enviroment/)
 >
 > 这是一篇迟到了一年的博文，去年学习Spark SQL 期间曾为跑分布式任务搭建过该集群一次，由于当时对很多东西都不熟悉花了不少时间。这次为了大数据实验又要重新搭建一次环境，但相对于第一次来说快多了。另外非常不建议在单机中搭建集群来完成课程实验之类的任务，因为涉及到集群间的调用等等问题速度很慢，[Hadoop的本地模式](https://blog.csdn.net/l_15156024189/article/details/81810553)也许是更好的选择！*（注意：本文搭建集群所使用的操作系统是Ubuntu 16.04）*
+>
+> **本文遵循[CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)开源分享协议，转载文章内容请注明出处。**
 
 
 

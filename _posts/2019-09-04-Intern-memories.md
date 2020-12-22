@@ -18,6 +18,8 @@ tags: 故事
 > This article is written in Chinese. If necessary, please consider using [Google Translate](http://translate.google.com/translate?hl=en&sl=auto&tl=en&u=https://steverao.github.io/2019/09/04/Intern-memories/)
 >
 > 作为一门重实践的学科，我觉得软件工程专业的毕业生在本科四年，没有真正走出去，去企业实习锻炼一段时间的大学学习经历是不完整。
+>
+> **本文遵循[CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)开源分享协议，转载文章内容请注明出处。**
 
 
 

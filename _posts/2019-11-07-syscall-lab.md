@@ -19,7 +19,9 @@ tags: 操作系统实验
 >
 > ***I hear and I forget, I see and I remember, I do and I understand！***
 >
-> 本文是哈工大李志军老师操作系统实验系列实验二：“系统调用”实验过程的记录*（因为仅是实验记录，文中实验原理性解释较少）*                                                                                         
+> 本文是哈工大李志军老师操作系统实验系列实验二：“系统调用”实验过程的记录*（因为仅是实验记录，文中实验原理性解释较少）*
+>
+> **本文遵循[CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)开源分享协议，转载文章内容请注明出处。**                                                                           
 
 
 

@@ -17,7 +17,9 @@ tags: 操作系统
 ---
 > This article is written in Chinese. If necessary, please consider using [Google Translate](http://translate.google.com/translate?hl=en&sl=auto&tl=en&u=https://steverao.github.io/2019/10/08/syscall-flow/)
 >
-> 对于普通用户来说，操作系统也许意味着 PC显示器上看到的五光十色界面，但对于软件开发人员来说，操作系统则代表着使用计算机硬件资源的宝库入口。那该如何利用操作系统来使用计算机资源呢？这就涉及到本文将介绍的操作系统为所有用户程序所提供的调用接口——系统调用。                                                                                                                           
+> 对于普通用户来说，操作系统也许意味着 PC显示器上看到的五光十色界面，但对于软件开发人员来说，操作系统则代表着使用计算机硬件资源的宝库入口。那该如何利用操作系统来使用计算机资源呢？这就涉及到本文将介绍的操作系统为所有用户程序所提供的调用接口——系统调用。 
+>
+> **本文遵循[CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)开源分享协议，转载文章内容请注明出处。**                                                                                                                        
 
 
 
